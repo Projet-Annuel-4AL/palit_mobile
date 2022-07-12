@@ -33,6 +33,17 @@
 		0469EE94287B081500D498D6 /* GroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE92287B081500D498D6 /* GroupsCollectionViewCell.swift */; };
 		0469EE95287B081500D498D6 /* GroupsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0469EE93287B081500D498D6 /* GroupsCollectionViewCell.xib */; };
 		0469EE98287B181B00D498D6 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE96287B181B00D498D6 /* GroupsViewController.swift */; };
+		047DE67F287B6086002D068A /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE67D287B6086002D068A /* GroupDetailViewController.swift */; };
+		047DE680287B6086002D068A /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047DE67E287B6086002D068A /* GroupDetailViewController.xib */; };
+		047DE685287B73B1002D068A /* GroupDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE683287B73B1002D068A /* GroupDetailTableViewCell.swift */; };
+		047DE686287B73B1002D068A /* GroupDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047DE684287B73B1002D068A /* GroupDetailTableViewCell.xib */; };
+		047DE68A287CB634002D068A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE689287CB634002D068A /* UserService.swift */; };
+		047DE68D287CB64C002D068A /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE68C287CB64C002D068A /* UserWebService.swift */; };
+		047DE693287CD0A9002D068A /* FollowWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE692287CD0A9002D068A /* FollowWebService.swift */; };
+		047DE695287CD0B9002D068A /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE694287CD0B9002D068A /* FollowService.swift */; };
+		047DE697287CD0C4002D068A /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE696287CD0C4002D068A /* Follow.swift */; };
+		047DE69A287CD56B002D068A /* ProfileUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */; };
+		047DE69B287CD56B002D068A /* ProfileUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +75,17 @@
 		0469EE92287B081500D498D6 /* GroupsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0469EE93287B081500D498D6 /* GroupsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0469EE96287B181B00D498D6 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		047DE67D287B6086002D068A /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
+		047DE67E287B6086002D068A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailViewController.xib; sourceTree = "<group>"; };
+		047DE683287B73B1002D068A /* GroupDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailTableViewCell.swift; sourceTree = "<group>"; };
+		047DE684287B73B1002D068A /* GroupDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailTableViewCell.xib; sourceTree = "<group>"; };
+		047DE689287CB634002D068A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		047DE68C287CB64C002D068A /* UserWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
+		047DE692287CD0A9002D068A /* FollowWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowWebService.swift; sourceTree = "<group>"; };
+		047DE694287CD0B9002D068A /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
+		047DE696287CD0C4002D068A /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserTableViewCell.swift; sourceTree = "<group>"; };
+		047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +118,7 @@
 		0469EE312879FAAD00D498D6 /* MobilePA */ = {
 			isa = PBXGroup;
 			children = (
+				047DE68E287CD020002D068A /* Follows */,
 				0469EE74287AC9BB00D498D6 /* Remark */,
 				0469EE6F287AC8F400D498D6 /* Like */,
 				0469EE6E287AC8ED00D498D6 /* User */,
@@ -187,6 +210,8 @@
 		0469EE6E287AC8ED00D498D6 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				047DE688287CB611002D068A /* WebServices */,
+				047DE687287CB606002D068A /* Services */,
 				0469EE70287AC8FD00D498D6 /* Models */,
 			);
 			path = User;
@@ -246,6 +271,8 @@
 			children = (
 				0469EE78287AF32D00D498D6 /* ProfileUserViewController.swift */,
 				0469EE79287AF32D00D498D6 /* ProfileUserViewController.xib */,
+				047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */,
+				047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */,
 			);
 			path = ProfileOtherUser;
 			sourceTree = "<group>";
@@ -296,11 +323,81 @@
 		0469EE8D287B078200D498D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				047DE682287B609B002D068A /* Groupcell */,
+				047DE681287B608F002D068A /* GroupDetail */,
 				0469EE96287B181B00D498D6 /* GroupsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		047DE681287B608F002D068A /* GroupDetail */ = {
+			isa = PBXGroup;
+			children = (
+				047DE67D287B6086002D068A /* GroupDetailViewController.swift */,
+				047DE67E287B6086002D068A /* GroupDetailViewController.xib */,
+				047DE683287B73B1002D068A /* GroupDetailTableViewCell.swift */,
+				047DE684287B73B1002D068A /* GroupDetailTableViewCell.xib */,
+			);
+			path = GroupDetail;
+			sourceTree = "<group>";
+		};
+		047DE682287B609B002D068A /* Groupcell */ = {
+			isa = PBXGroup;
+			children = (
 				0469EE92287B081500D498D6 /* GroupsCollectionViewCell.swift */,
 				0469EE93287B081500D498D6 /* GroupsCollectionViewCell.xib */,
 			);
-			path = Views;
+			path = Groupcell;
+			sourceTree = "<group>";
+		};
+		047DE687287CB606002D068A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				047DE689287CB634002D068A /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		047DE688287CB611002D068A /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				047DE68C287CB64C002D068A /* UserWebService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		047DE68E287CD020002D068A /* Follows */ = {
+			isa = PBXGroup;
+			children = (
+				047DE691287CD04F002D068A /* WebServices */,
+				047DE690287CD048002D068A /* Services */,
+				047DE68F287CD03A002D068A /* Models */,
+			);
+			path = Follows;
+			sourceTree = "<group>";
+		};
+		047DE68F287CD03A002D068A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				047DE696287CD0C4002D068A /* Follow.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		047DE690287CD048002D068A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				047DE694287CD0B9002D068A /* FollowService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		047DE691287CD04F002D068A /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				047DE692287CD0A9002D068A /* FollowWebService.swift */,
+			);
+			path = WebServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,9 +460,12 @@
 			files = (
 				0469EE7B287AF32D00D498D6 /* ProfileUserViewController.xib in Resources */,
 				0469EE3F2879FAAE00D498D6 /* LaunchScreen.storyboard in Resources */,
+				047DE686287B73B1002D068A /* GroupDetailTableViewCell.xib in Resources */,
 				0469EE83287AFF3F00D498D6 /* RemarksViewController.xib in Resources */,
+				047DE69B287CD56B002D068A /* ProfileUserTableViewCell.xib in Resources */,
 				0469EE3C2879FAAE00D498D6 /* Assets.xcassets in Resources */,
 				0469EE95287B081500D498D6 /* GroupsCollectionViewCell.xib in Resources */,
+				047DE680287B6086002D068A /* GroupDetailViewController.xib in Resources */,
 				0469EE3A2879FAAD00D498D6 /* Main.storyboard in Resources */,
 				0469EE582879FFCC00D498D6 /* PostTableViewCell.xib in Resources */,
 			);
@@ -380,15 +480,22 @@
 			files = (
 				0469EE572879FFCC00D498D6 /* PostTableViewCell.swift in Sources */,
 				0469EE8A287B03E500D498D6 /* Group.swift in Sources */,
+				047DE69A287CD56B002D068A /* ProfileUserTableViewCell.swift in Sources */,
 				0469EE4E2879FDB700D498D6 /* PostService.swift in Sources */,
 				0469EE4C2879FD8E00D498D6 /* PostWebService.swift in Sources */,
 				0469EE372879FAAD00D498D6 /* PostViewController.swift in Sources */,
 				0469EE5A287A277100D498D6 /* User.swift in Sources */,
+				047DE68D287CB64C002D068A /* UserWebService.swift in Sources */,
+				047DE68A287CB634002D068A /* UserService.swift in Sources */,
+				047DE685287B73B1002D068A /* GroupDetailTableViewCell.swift in Sources */,
 				0469EE73287AC92700D498D6 /* Like.swift in Sources */,
 				0469EE69287AC50D00D498D6 /* ProfileViewController.swift in Sources */,
+				047DE693287CD0A9002D068A /* FollowWebService.swift in Sources */,
 				0469EE502879FDCF00D498D6 /* Post.swift in Sources */,
+				047DE67F287B6086002D068A /* GroupDetailViewController.swift in Sources */,
 				0469EE94287B081500D498D6 /* GroupsCollectionViewCell.swift in Sources */,
 				0469EE7A287AF32D00D498D6 /* ProfileUserViewController.swift in Sources */,
+				047DE695287CD0B9002D068A /* FollowService.swift in Sources */,
 				0469EE77287AC9DD00D498D6 /* Remark.swift in Sources */,
 				0469EE88287B03B100D498D6 /* GroupService.swift in Sources */,
 				0469EE5C287A2C8C00D498D6 /* PostText.swift in Sources */,
@@ -396,6 +503,7 @@
 				0469EE98287B181B00D498D6 /* GroupsViewController.swift in Sources */,
 				0469EE352879FAAD00D498D6 /* SceneDelegate.swift in Sources */,
 				0469EE82287AFF3F00D498D6 /* RemarksViewController.swift in Sources */,
+				047DE697287CD0C4002D068A /* Follow.swift in Sources */,
 				0469EE8C287B065500D498D6 /* GroupWebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

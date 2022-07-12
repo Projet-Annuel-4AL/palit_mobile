@@ -33,6 +33,7 @@ class User {
             return nil
         }
         
+        
         self.init(idUser: idUser, firstName: firstName, lastName: lastName, mail: mail, password: password)
     }
 }

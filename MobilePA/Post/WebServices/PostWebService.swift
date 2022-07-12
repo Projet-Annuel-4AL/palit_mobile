@@ -31,4 +31,30 @@ class PostWebService: PostService {
         }
         dataTask.resume() // start request
     }
+    
+    func getPostsByIdUser(completion: @escaping([Post]) -> Void, idUser: Int){
+        let url = "http://52.208.34.20:3000/api/posts/id/" + String(idUser)
+        
+        guard let url = URL(string: url)
+        else {
+            completion([])
+            return
+        }
+        let dataTask = URLSession.shared.dataTask(with: url) { data, res, err in
+            guard let fetchData = data,
+                  let json = try? JSONSerialization.jsonObject(with: fetchData) as? [ [String: Any] ] else {
+                completion([])
+                return
+            }
+            print(json)
+            
+            let posts  = json.compactMap{ post in
+                Post(dict: post)
+            }
+            DispatchQueue.main.async {
+                completion(posts)
+            }
+        }
+        dataTask.resume()
+    }
 }

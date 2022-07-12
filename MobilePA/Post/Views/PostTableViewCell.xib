@@ -68,15 +68,6 @@
                             <constraint firstItem="WPG-vw-6fA" firstAttribute="top" secondItem="dCs-nH-sYa" secondAttribute="bottom" constant="5" id="rUo-te-i5h"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titre du post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6j-I1-mCt">
-                        <rect key="frame" x="20" y="190" width="97" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="6x3-12-xO7"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-Vx-Sfc">
                         <rect key="frame" x="0.0" y="397" width="515" height="50"/>
                         <subviews>
@@ -130,16 +121,25 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-uA-D38">
-                        <rect key="frame" x="30" y="171" width="465" height="206"/>
+                        <rect key="frame" x="30" y="161" width="465" height="216"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titre du post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6j-I1-mCt">
+                        <rect key="frame" x="39" y="128" width="97" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="6x3-12-xO7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="MdN-Vx-Sfc" secondAttribute="trailing" id="1RX-cY-pkf"/>
-                    <constraint firstItem="F6j-I1-mCt" firstAttribute="top" secondItem="jkg-WZ-dzB" secondAttribute="bottom" constant="10" id="3Fs-6P-qaT"/>
+                    <constraint firstItem="F6j-I1-mCt" firstAttribute="top" secondItem="jkg-WZ-dzB" secondAttribute="bottom" id="3Fs-6P-qaT"/>
                     <constraint firstAttribute="trailingMargin" secondItem="eyZ-uA-D38" secondAttribute="trailing" id="5WY-Pu-K6A"/>
                     <constraint firstItem="F6j-I1-mCt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="8eW-qz-cms"/>
                     <constraint firstItem="jkg-WZ-dzB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CUy-Hz-6fI"/>

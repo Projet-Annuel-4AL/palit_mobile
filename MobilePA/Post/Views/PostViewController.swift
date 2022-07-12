@@ -57,9 +57,10 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
 }
 
 extension PostViewController: PostTableViewCellDelegate {
-    func goToProfile() {
+    func goToProfile(idUser: Int) {
         let userProfile = ProfileUserViewController()
        
+        userProfile.idUser = idUser
         self.navigationController?.pushViewController(userProfile, animated: true)
     }
     

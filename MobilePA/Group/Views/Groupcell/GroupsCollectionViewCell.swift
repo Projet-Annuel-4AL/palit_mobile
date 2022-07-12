@@ -17,6 +17,7 @@ class GroupsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var groupTitle: UILabel!
     @IBOutlet weak var groupDescription: UILabel!
+    @IBOutlet var groupTheme: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class GroupsCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.setGroupTitle(model: model)
         self.setGroupDescription(model: model)
+        self.setGroupTheme(model: model)
     }
 
     
@@ -40,6 +42,14 @@ class GroupsCollectionViewCell: UICollectionViewCell {
     func setGroupDescription(model: Group){
         self.groupDescription.text = self.truncateString(text: model.description)
         self.groupDescription.numberOfLines = 0
+    }
+    
+    func setGroupTheme(model: Group){
+        var config = UIButton.Configuration.tinted()
+        config.subtitle = model.theme
+        
+        self.groupTheme.configuration = config
+        self.groupTheme.isUserInteractionEnabled = true
     }
     
     private func truncateString(text: String) -> String{

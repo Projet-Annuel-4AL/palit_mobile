@@ -7,24 +7,59 @@
 
 import UIKit
 
-class ProfileUserViewController: UIViewController {
+class ProfileUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var postsUserTableView: UITableView!
 
+    let cellSpacingHeight: CGFloat = 5
+    var idUser: Int!
+    var userService: UserService = UserWebService()
+    var postService: PostService = PostWebService()
+    var postsByUser: [Post] = [] {
+        didSet {
+            self.postsUserTableView.reloadData()
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "User"
-        // Do any additional setup after loading the view.
+        self.title = "Profil"
+        
+        self.postsUserTableView.register(ProfileUserTableViewCell.nib(), forCellReuseIdentifier: ProfileUserTableViewCell.identifier)
+        
+        self.postService.getPostsByIdUser(completion: { posts in
+            self.postsByUser = posts
+        }, idUser: self.idUser)
+        
+        self.userService.getUserById(completion: { user in
+            self.configure(with: user)
+        }, idUser: self.idUser)
+        
+        
+        
+        self.postsUserTableView.delegate = self
+        self.postsUserTableView.dataSource = self
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postsByUser.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserTableViewCell.identifier, for: indexPath) as! ProfileUserTableViewCell
+        
+        cell.configure(with: postsByUser[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+    }
+    
+    private func configure(with model: User){
+        self.userName.text = model.firstName
+    }
 }

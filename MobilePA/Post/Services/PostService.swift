@@ -9,4 +9,6 @@ import Foundation
 
 protocol PostService{
     func getPosts(completion: @escaping ([Post]) -> Void)
+    
+    func getPostsByIdUser(completion: @escaping([Post]) -> Void, idUser: Int)
 }

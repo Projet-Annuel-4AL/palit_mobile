@@ -44,6 +44,17 @@ class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let groupDetail = GroupDetailViewController()
+        
+        let group = self.groups[indexPath.row]
+        
+        groupDetail.group = group
+        
+       
+        self.navigationController!.pushViewController(groupDetail,animated:true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 300, height: 250)

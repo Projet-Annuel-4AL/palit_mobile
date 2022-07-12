@@ -16,7 +16,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var remarksCount: UILabel!
     
-    weak var delegate: PostTableViewCellDelegate?
+    var delegate: PostTableViewCellDelegate?
+    var model: Post!
     
     static let identifier = "PostTableViewCell"
     
@@ -36,52 +37,53 @@ class PostTableViewCell: UITableViewCell {
     }
         
     func configure(with model: Post){
-        self.setUserImage(model: model)
-        self.setUserName(model: model)
-        self.setTitlePost(model: model)
-        self.setPostText(model: model)
-        self.setLikesCount(model: model)
-        self.setRemarksCount(model: model)
-        self.setLikesCount(model: model)
-        self.setRemarksCount(model: model)
+        self.model = model
+        
+        self.setUserImage()
+        self.setUserName()
+        self.setTitlePost()
+        self.setPostText()
+        self.setLikesCount()
+        self.setRemarksCount()
+        self.setLikesCount()
     }
     
     @IBAction func goToProfile(){
-        delegate?.goToProfile()
+        delegate?.goToProfile(idUser: self.model.user.idUser)
     }
     
     @IBAction func goToRemarksOfPost(){
         delegate?.goToRemarksOfPost()
     }
     
-    func setUserImage(model: Post){
+    func setUserImage(){
         self.userImageView.layer.shouldRasterize = true
         self.userImageView.layer.cornerRadius = self.userImageView.frame.height/2
         self.userImageView.clipsToBounds = true
     }
     
-    func setUserName(model: Post){
+    func setUserName(){
         var config = UIButton.Configuration.tinted()
-        config.subtitle = "Posté par " + model.user.firstName
+        config.subtitle = "Posté par " + self.model.user.firstName
         
         self.buttonUserName.configuration = config
         self.buttonUserName.isUserInteractionEnabled = true
         
     }
     
-    func setTitlePost(model: Post){
-        self.titlePost.text = model.title
+    func setTitlePost(){
+        self.titlePost.text = self.model.title
         self.titlePost.numberOfLines = 0
         self.titlePost.font = UIFont(name:"HelveticaNeue-Bold", size: 19.0)
     }
     
-    func setPostText(model: Post){
+    func setPostText(){
         self.postText.numberOfLines = 0
-        self.postText.text = model.text.content
+        self.postText.text = self.model.text.content
     }
     
-    func setLikesCount(model: Post){
-        let likeCount = model.likes.count
+    func setLikesCount(){
+        let likeCount = self.model.likes.count
         
         if(likeCount == 0){
             self.likesCount.text = ""
@@ -90,8 +92,8 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-    func setRemarksCount(model: Post){
-        let remarksCount = model.remarks.count
+    func setRemarksCount(){
+        let remarksCount = self.model.remarks.count
         
         self.remarksCount.text = String(remarksCount)
     }
@@ -100,6 +102,6 @@ class PostTableViewCell: UITableViewCell {
 }
 
 protocol PostTableViewCellDelegate: AnyObject {
-    func goToProfile()
+    func goToProfile(idUser: Int)
     func goToRemarksOfPost()
 }

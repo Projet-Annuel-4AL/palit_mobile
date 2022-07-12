@@ -60,6 +60,14 @@
                             <constraint firstItem="SgV-WM-J6P" firstAttribute="top" secondItem="Vs2-3q-ZGc" secondAttribute="top" id="fJi-AM-zpF"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJ6-Qs-PgI">
+                        <rect key="frame" x="351" y="15" width="24" height="14"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title=""/>
+                        <connections>
+                            <action selector="groupTheme:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MDr-jI-Cf7"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -67,16 +75,19 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="PeT-Qx-csW" secondAttribute="trailing" id="04m-HN-Dyy"/>
                 <constraint firstItem="Vs2-3q-ZGc" firstAttribute="top" secondItem="PeT-Qx-csW" secondAttribute="bottom" constant="15" id="9b3-fh-cu8"/>
+                <constraint firstAttribute="trailing" secondItem="RJ6-Qs-PgI" secondAttribute="trailing" constant="15" id="Aus-dO-WgI"/>
                 <constraint firstItem="PeT-Qx-csW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Hgr-Tm-VNo"/>
                 <constraint firstAttribute="trailing" secondItem="Vs2-3q-ZGc" secondAttribute="trailing" id="VOw-1E-8tA"/>
                 <constraint firstItem="oWm-XA-XD1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Xdp-rf-ha4"/>
                 <constraint firstItem="oWm-XA-XD1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="ghx-K0-DgY"/>
                 <constraint firstItem="PeT-Qx-csW" firstAttribute="top" secondItem="oWm-XA-XD1" secondAttribute="bottom" constant="15" id="jTM-99-u0H"/>
+                <constraint firstItem="RJ6-Qs-PgI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="kMW-VY-a11"/>
                 <constraint firstItem="Vs2-3q-ZGc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ndH-07-4kF"/>
             </constraints>
             <size key="customSize" width="390" height="297"/>
             <connections>
                 <outlet property="groupDescription" destination="6Di-3f-pdQ" id="iz0-vW-Hgb"/>
+                <outlet property="groupTheme" destination="RJ6-Qs-PgI" id="mRR-y6-hvw"/>
                 <outlet property="groupTitle" destination="oWm-XA-XD1" id="N56-ho-PHr"/>
             </connections>
             <point key="canvasLocation" x="10.144927536231885" y="3.0133928571428572"/>
