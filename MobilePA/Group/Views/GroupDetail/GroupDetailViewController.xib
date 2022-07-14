@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupDetailViewController" customModule="MobilePA" customModuleProvider="target">
             <connections>
-                <outlet property="groupTableview" destination="GRr-hK-k1Q" id="fMt-2p-Tdw"/>
+                <outlet property="groupTableview" destination="Vp6-j4-dwc" id="gO8-0j-MdL"/>
                 <outlet property="groupTitle" destination="MTw-Uy-sQL" id="Ngy-2J-eWy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -52,21 +52,23 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" subtitle="Rejoindre"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-H7-VQ4">
-                                    <rect key="frame" x="157" y="25" width="44.5" height="31"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-r2-epE">
+                                    <rect key="frame" x="154" y="23.5" width="45" height="31"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" image="info.circle" catalog="system"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
+                                    <connections>
+                                        <action selector="showDescription" destination="-1" eventType="touchUpInside" id="Omb-s4-AVx"/>
+                                    </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="MTw-Uy-sQL" firstAttribute="leading" secondItem="8xD-6U-9SO" secondAttribute="leading" constant="30" id="0bV-Ps-Sot"/>
+                                <constraint firstItem="ZAK-r2-epE" firstAttribute="centerY" secondItem="8xD-6U-9SO" secondAttribute="centerY" id="3Xa-qj-aJt"/>
                                 <constraint firstItem="MTw-Uy-sQL" firstAttribute="centerY" secondItem="8xD-6U-9SO" secondAttribute="centerY" id="5Es-tk-IPh"/>
-                                <constraint firstItem="OMl-H7-VQ4" firstAttribute="centerY" secondItem="8xD-6U-9SO" secondAttribute="centerY" id="9Vy-TS-sHf"/>
                                 <constraint firstItem="RVR-Kf-OCD" firstAttribute="centerY" secondItem="8xD-6U-9SO" secondAttribute="centerY" id="HoI-St-0pz"/>
-                                <constraint firstItem="OMl-H7-VQ4" firstAttribute="leading" secondItem="MTw-Uy-sQL" secondAttribute="trailing" constant="5" id="Zil-1H-Otq"/>
+                                <constraint firstItem="ZAK-r2-epE" firstAttribute="leading" secondItem="MTw-Uy-sQL" secondAttribute="trailing" constant="5" id="aWC-H5-qYr"/>
                                 <constraint firstAttribute="trailing" secondItem="RVR-Kf-OCD" secondAttribute="trailing" constant="25" id="pzj-qJ-qY8"/>
                             </constraints>
                         </view>
@@ -84,21 +86,21 @@
                         <constraint firstAttribute="height" constant="128" id="nd6-eY-ocq"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GRr-hK-k1Q">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vp6-j4-dwc">
                     <rect key="frame" x="0.0" y="172" width="414" height="690"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="chp-oj-nTt" secondAttribute="trailing" id="21v-Hq-DMx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GRr-hK-k1Q" secondAttribute="bottom" id="Joa-qa-8pI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Vp6-j4-dwc" secondAttribute="bottom" id="HXW-ZK-qPw"/>
                 <constraint firstItem="chp-oj-nTt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SOd-Bu-BgP"/>
-                <constraint firstItem="GRr-hK-k1Q" firstAttribute="top" secondItem="chp-oj-nTt" secondAttribute="bottom" id="UKX-MI-a9K"/>
+                <constraint firstItem="Vp6-j4-dwc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YD9-bh-nHG"/>
+                <constraint firstItem="Vp6-j4-dwc" firstAttribute="top" secondItem="chp-oj-nTt" secondAttribute="bottom" id="ZFL-zi-VS5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vp6-j4-dwc" secondAttribute="trailing" id="bBx-NJ-298"/>
                 <constraint firstItem="chp-oj-nTt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nvF-S8-td3"/>
-                <constraint firstItem="GRr-hK-k1Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tIc-62-9Ji"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GRr-hK-k1Q" secondAttribute="trailing" id="yem-dh-GMB"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </view>

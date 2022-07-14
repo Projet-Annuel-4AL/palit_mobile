@@ -1,18 +1,18 @@
 //
-//  ProfileUserTableViewCell.swift
+//  ProfileCurrentUserTableViewCell.swift
 //  MobilePA
 //
-//  Created by Lucas Angoston on 12/07/2022.
+//  Created by Lucas Angoston on 14/07/2022.
 //
 
 import UIKit
 
-class ProfileUserTableViewCell: UITableViewCell {
+class ProfileCurrentUserTableViewCell: UITableViewCell {
 
-    static let identifier = "profileUserTableViewCell"
+    static let identifier = "profileCurrentUserTableViewCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "ProfileUserTableViewCell", bundle: nil)
+        return UINib(nibName: "ProfileCurrentUserTableViewCell", bundle: nil)
     }
     
     var models: Post!

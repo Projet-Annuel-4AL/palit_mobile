@@ -78,8 +78,10 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setPostText(){
+        let htmlString = self.model.text.content.htmlAttributedString()
+        
         self.postText.numberOfLines = 0
-        self.postText.text = self.model.text.content
+        self.postText.text = htmlString
     }
     
     func setLikesCount(){
@@ -104,4 +106,20 @@ class PostTableViewCell: UITableViewCell {
 protocol PostTableViewCellDelegate: AnyObject {
     func goToProfile(idUser: Int)
     func goToRemarksOfPost()
+}
+
+extension String {
+    func htmlAttributedString() -> String? {
+        guard let data = self.data(using: .utf8) else {
+            return nil
+        }
+
+        let attributedString = try? NSAttributedString(
+            data: data,
+            options: [.documentType: NSAttributedString.DocumentType.html],
+            documentAttributes: nil
+        )
+        
+        return attributedString?.string
+    }
 }

@@ -9,18 +9,28 @@ import UIKit
 
 class GroupDetailTableViewCell: UITableViewCell {
     
-    static let identifier = "GroupDetailTableViewCell"
-    
-    @IBOutlet weak var postText: UILabel!
-    
+    static let identifier = "groupDetailTableViewCell"
+        
     static func nib() -> UINib {
         return UINib(nibName: "GroupDetailTableViewCell", bundle: nil)
     }
     
+    var models: GroupPost!
+    
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var postText: UILabel!
+    @IBOutlet weak var postTitle: UILabel!
+    
+    public func configure(with models: GroupPost){
+        self.models = models
+        
+        self.setUserName()
+        self.setPostText()
+        self.setPostTitle()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        postText.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,8 +39,17 @@ class GroupDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with models: Group){
-        
+    private func setUserName(){
+        self.userName.text = "luffy"
+    }
+    
+    private func setPostText(){
+        self.postText.numberOfLines = 0
+        self.postText.text = "un post"
+    }
+    
+    private func setPostTitle(){
+        self.postTitle.text = self.models.post.title
     }
     
 }

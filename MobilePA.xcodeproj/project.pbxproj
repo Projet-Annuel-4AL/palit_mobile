@@ -44,10 +44,23 @@
 		047DE697287CD0C4002D068A /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE696287CD0C4002D068A /* Follow.swift */; };
 		047DE69A287CD56B002D068A /* ProfileUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */; };
 		047DE69B287CD56B002D068A /* ProfileUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */; };
+		047DE6A5287E3631002D068A /* AuthenticationWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6A4287E3631002D068A /* AuthenticationWebService.swift */; };
+		047DE6A8287E3907002D068A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6A7287E3907002D068A /* AuthenticationService.swift */; };
+		047DE6AD287F623B002D068A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6AB287F623B002D068A /* LoginViewController.swift */; };
+		04A61C5E287F6B4E00DA6775 /* SwiftBCrypt in Frameworks */ = {isa = PBXBuildFile; productRef = 04A61C5D287F6B4E00DA6775 /* SwiftBCrypt */; };
+		04A61C70287F79BB00DA6775 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C6E287F79BB00DA6775 /* RegisterViewController.swift */; };
+		04A61C75287F932500DA6775 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C73287F932500DA6775 /* CreatePostViewController.swift */; };
+		04A61C76287F932500DA6775 /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A61C74287F932500DA6775 /* CreatePostViewController.xib */; };
+		04A61C7A287FA23700DA6775 /* TextPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C78287FA23700DA6775 /* TextPostViewController.swift */; };
+		04A61C7B287FA23700DA6775 /* TextPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A61C79287FA23700DA6775 /* TextPostViewController.xib */; };
+		04A61C7F287FA77A00DA6775 /* CreatePostWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C7E287FA77A00DA6775 /* CreatePostWebService.swift */; };
+		04A61C81287FA7E000DA6775 /* CreatePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C80287FA7E000DA6775 /* CreatePostService.swift */; };
+		04A61C8828804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C8628804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift */; };
+		04A61C8928804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A61C8728804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib */; };
+		04A61C8D2880737B00DA6775 /* GroupPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C8C2880737B00DA6775 /* GroupPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0469EE2F2879FAAD00D498D6 /* MobilePA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilePA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0469EE322879FAAD00D498D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0469EE342879FAAD00D498D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0469EE362879FAAD00D498D6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +99,20 @@
 		047DE696287CD0C4002D068A /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserTableViewCell.swift; sourceTree = "<group>"; };
 		047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserTableViewCell.xib; sourceTree = "<group>"; };
+		047DE6A4287E3631002D068A /* AuthenticationWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWebService.swift; sourceTree = "<group>"; };
+		047DE6A7287E3907002D068A /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		047DE6AB287F623B002D068A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04A61C67287F705D00DA6775 /* MobilePA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobilePA.app; path = "/Users/lucasangoston/Documents/projetAnnuel/MobilePA/build/Debug-iphoneos/MobilePA.app"; sourceTree = "<absolute>"; };
+		04A61C6E287F79BB00DA6775 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		04A61C73287F932500DA6775 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		04A61C74287F932500DA6775 /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
+		04A61C78287FA23700DA6775 /* TextPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPostViewController.swift; sourceTree = "<group>"; };
+		04A61C79287FA23700DA6775 /* TextPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPostViewController.xib; sourceTree = "<group>"; };
+		04A61C7E287FA77A00DA6775 /* CreatePostWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostWebService.swift; sourceTree = "<group>"; };
+		04A61C80287FA7E000DA6775 /* CreatePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostService.swift; sourceTree = "<group>"; };
+		04A61C8628804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCurrentUserTableViewCell.swift; sourceTree = "<group>"; };
+		04A61C8728804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCurrentUserTableViewCell.xib; sourceTree = "<group>"; };
+		04A61C8C2880737B00DA6775 /* GroupPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A61C5E287F6B4E00DA6775 /* SwiftBCrypt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,21 +131,14 @@
 			isa = PBXGroup;
 			children = (
 				0469EE312879FAAD00D498D6 /* MobilePA */,
-				0469EE302879FAAD00D498D6 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		0469EE302879FAAD00D498D6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0469EE2F2879FAAD00D498D6 /* MobilePA.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0469EE312879FAAD00D498D6 /* MobilePA */ = {
 			isa = PBXGroup;
 			children = (
+				04A61C72287F92D300DA6775 /* Creation */,
+				047DE69C287E2801002D068A /* Authentication */,
 				047DE68E287CD020002D068A /* Follows */,
 				0469EE74287AC9BB00D498D6 /* Remark */,
 				0469EE6F287AC8F400D498D6 /* Like */,
@@ -262,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				0469EE67287AC50D00D498D6 /* ProfileViewController.swift */,
+				04A61C8628804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift */,
+				04A61C8728804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib */,
 			);
 			path = ProfileCurrentUser;
 			sourceTree = "<group>";
@@ -300,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				0469EE89287B03E500D498D6 /* Group.swift */,
+				04A61C8C2880737B00DA6775 /* GroupPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +424,94 @@
 			path = WebServices;
 			sourceTree = "<group>";
 		};
+		047DE69C287E2801002D068A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				047DE6A6287E38DF002D068A /* Services */,
+				047DE6A3287E3612002D068A /* WebServices */,
+				047DE69D287E280D002D068A /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		047DE69D287E280D002D068A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				047DE6AB287F623B002D068A /* LoginViewController.swift */,
+				04A61C6E287F79BB00DA6775 /* RegisterViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		047DE6A3287E3612002D068A /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				047DE6A4287E3631002D068A /* AuthenticationWebService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		047DE6A6287E38DF002D068A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				047DE6A7287E3907002D068A /* AuthenticationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04A61C72287F92D300DA6775 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				04A61C8B2880735100DA6775 /* Picture */,
+				04A61C8A2880732900DA6775 /* Post */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		04A61C77287FA1F700DA6775 /* TextPost */ = {
+			isa = PBXGroup;
+			children = (
+				04A61C78287FA23700DA6775 /* TextPostViewController.swift */,
+				04A61C79287FA23700DA6775 /* TextPostViewController.xib */,
+			);
+			path = TextPost;
+			sourceTree = "<group>";
+		};
+		04A61C7C287FA72200DA6775 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				04A61C7E287FA77A00DA6775 /* CreatePostWebService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		04A61C7D287FA74D00DA6775 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04A61C80287FA7E000DA6775 /* CreatePostService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04A61C8A2880732900DA6775 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				04A61C7D287FA74D00DA6775 /* Services */,
+				04A61C7C287FA72200DA6775 /* WebServices */,
+				04A61C77287FA1F700DA6775 /* TextPost */,
+				04A61C73287F932500DA6775 /* CreatePostViewController.swift */,
+				04A61C74287F932500DA6775 /* CreatePostViewController.xib */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		04A61C8B2880735100DA6775 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Picture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,8 +528,11 @@
 			dependencies = (
 			);
 			name = MobilePA;
+			packageProductDependencies = (
+				04A61C5D287F6B4E00DA6775 /* SwiftBCrypt */,
+			);
 			productName = MobilePA;
-			productReference = 0469EE2F2879FAAD00D498D6 /* MobilePA.app */;
+			productReference = 04A61C67287F705D00DA6775 /* MobilePA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -444,7 +559,10 @@
 				Base,
 			);
 			mainGroup = 0469EE262879FAAD00D498D6;
-			productRefGroup = 0469EE302879FAAD00D498D6 /* Products */;
+			packageReferences = (
+				04A61C5C287F6B4E00DA6775 /* XCRemoteSwiftPackageReference "SwiftBCrypt" */,
+			);
+			productRefGroup = 0469EE262879FAAD00D498D6;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -459,13 +577,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0469EE7B287AF32D00D498D6 /* ProfileUserViewController.xib in Resources */,
+				04A61C7B287FA23700DA6775 /* TextPostViewController.xib in Resources */,
 				0469EE3F2879FAAE00D498D6 /* LaunchScreen.storyboard in Resources */,
 				047DE686287B73B1002D068A /* GroupDetailTableViewCell.xib in Resources */,
 				0469EE83287AFF3F00D498D6 /* RemarksViewController.xib in Resources */,
+				04A61C76287F932500DA6775 /* CreatePostViewController.xib in Resources */,
 				047DE69B287CD56B002D068A /* ProfileUserTableViewCell.xib in Resources */,
 				0469EE3C2879FAAE00D498D6 /* Assets.xcassets in Resources */,
 				0469EE95287B081500D498D6 /* GroupsCollectionViewCell.xib in Resources */,
 				047DE680287B6086002D068A /* GroupDetailViewController.xib in Resources */,
+				04A61C8928804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib in Resources */,
 				0469EE3A2879FAAD00D498D6 /* Main.storyboard in Resources */,
 				0469EE582879FFCC00D498D6 /* PostTableViewCell.xib in Resources */,
 			);
@@ -479,23 +600,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				0469EE572879FFCC00D498D6 /* PostTableViewCell.swift in Sources */,
+				047DE6A5287E3631002D068A /* AuthenticationWebService.swift in Sources */,
 				0469EE8A287B03E500D498D6 /* Group.swift in Sources */,
 				047DE69A287CD56B002D068A /* ProfileUserTableViewCell.swift in Sources */,
 				0469EE4E2879FDB700D498D6 /* PostService.swift in Sources */,
 				0469EE4C2879FD8E00D498D6 /* PostWebService.swift in Sources */,
+				04A61C8D2880737B00DA6775 /* GroupPost.swift in Sources */,
+				04A61C7A287FA23700DA6775 /* TextPostViewController.swift in Sources */,
 				0469EE372879FAAD00D498D6 /* PostViewController.swift in Sources */,
 				0469EE5A287A277100D498D6 /* User.swift in Sources */,
 				047DE68D287CB64C002D068A /* UserWebService.swift in Sources */,
+				04A61C8828804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift in Sources */,
+				047DE6A8287E3907002D068A /* AuthenticationService.swift in Sources */,
 				047DE68A287CB634002D068A /* UserService.swift in Sources */,
 				047DE685287B73B1002D068A /* GroupDetailTableViewCell.swift in Sources */,
 				0469EE73287AC92700D498D6 /* Like.swift in Sources */,
 				0469EE69287AC50D00D498D6 /* ProfileViewController.swift in Sources */,
 				047DE693287CD0A9002D068A /* FollowWebService.swift in Sources */,
+				04A61C81287FA7E000DA6775 /* CreatePostService.swift in Sources */,
 				0469EE502879FDCF00D498D6 /* Post.swift in Sources */,
 				047DE67F287B6086002D068A /* GroupDetailViewController.swift in Sources */,
 				0469EE94287B081500D498D6 /* GroupsCollectionViewCell.swift in Sources */,
+				04A61C75287F932500DA6775 /* CreatePostViewController.swift in Sources */,
+				047DE6AD287F623B002D068A /* LoginViewController.swift in Sources */,
 				0469EE7A287AF32D00D498D6 /* ProfileUserViewController.swift in Sources */,
+				04A61C7F287FA77A00DA6775 /* CreatePostWebService.swift in Sources */,
 				047DE695287CD0B9002D068A /* FollowService.swift in Sources */,
+				04A61C70287F79BB00DA6775 /* RegisterViewController.swift in Sources */,
 				0469EE77287AC9DD00D498D6 /* Remark.swift in Sources */,
 				0469EE88287B03B100D498D6 /* GroupService.swift in Sources */,
 				0469EE5C287A2C8C00D498D6 /* PostText.swift in Sources */,
@@ -722,6 +853,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04A61C5C287F6B4E00DA6775 /* XCRemoteSwiftPackageReference "SwiftBCrypt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tannerdsilva/SwiftBCrypt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04A61C5D287F6B4E00DA6775 /* SwiftBCrypt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04A61C5C287F6B4E00DA6775 /* XCRemoteSwiftPackageReference "SwiftBCrypt" */;
+			productName = SwiftBCrypt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0469EE272879FAAD00D498D6 /* Project object */;
 }

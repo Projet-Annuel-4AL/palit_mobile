@@ -9,8 +9,9 @@ import UIKit
 
 class ProfileUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet var postsUserTableView: UITableView!
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var postsUserTableView: UITableView!
 
     let cellSpacingHeight: CGFloat = 5
     var idUser: Int!
@@ -24,6 +25,9 @@ class ProfileUserViewController: UIViewController, UITableViewDelegate, UITableV
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.postsUserTableView.delegate = self
+        self.postsUserTableView.dataSource = self
 
         self.title = "Profil"
         
@@ -38,9 +42,6 @@ class ProfileUserViewController: UIViewController, UITableViewDelegate, UITableV
         }, idUser: self.idUser)
         
         
-        
-        self.postsUserTableView.delegate = self
-        self.postsUserTableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

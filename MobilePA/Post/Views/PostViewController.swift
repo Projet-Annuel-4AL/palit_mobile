@@ -8,8 +8,9 @@
 import UIKit
 
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableViewPost: UITableView!
+    private let refreshControl = UIRefreshControl()
       
     var postService: PostService = PostWebService()
     let cellSpacingHeight: CGFloat = 5
@@ -21,7 +22,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationItem.hidesBackButton = true
         self.tableViewPost.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         
         self.postService.getPosts{ posts in
@@ -53,6 +55,8 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
+    
+    
 
 }
 

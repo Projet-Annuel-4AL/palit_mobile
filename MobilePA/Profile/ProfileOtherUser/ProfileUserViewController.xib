@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileUserViewController" customModule="MobilePA" customModuleProvider="target">
             <connections>
-                <outlet property="postsUserTableView" destination="bD7-kE-Dgy" id="ABn-ho-nNV"/>
+                <outlet property="postsUserTableView" destination="Bav-y1-D1s" id="2az-42-Xv9"/>
                 <outlet property="userName" destination="m9w-U5-ORH" id="yPU-ou-XwC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -73,7 +73,7 @@
                         <constraint firstAttribute="height" constant="60" id="p5Z-bO-w0J"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bD7-kE-Dgy">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bav-y1-D1s">
                     <rect key="frame" x="0.0" y="299" width="414" height="563"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -82,20 +82,20 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="3z9-t1-CmC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="1ub-HB-Y9Y"/>
-                <constraint firstItem="bD7-kE-Dgy" firstAttribute="top" secondItem="0vp-LE-N7g" secondAttribute="bottom" id="CoZ-b1-Ysm"/>
-                <constraint firstItem="bD7-kE-Dgy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RXB-w6-Ytw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bD7-kE-Dgy" secondAttribute="trailing" id="VUg-Dr-ZBV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bav-y1-D1s" secondAttribute="bottom" id="NJL-E6-LPc"/>
+                <constraint firstItem="Bav-y1-D1s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Oed-Cv-k0e"/>
                 <constraint firstItem="sre-AV-PBZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="W2u-o5-VEa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bav-y1-D1s" secondAttribute="trailing" id="Zxc-WE-mgA"/>
                 <constraint firstItem="sre-AV-PBZ" firstAttribute="top" secondItem="m9w-U5-ORH" secondAttribute="bottom" constant="5" id="adW-Vv-Ey5"/>
+                <constraint firstItem="Bav-y1-D1s" firstAttribute="top" secondItem="0vp-LE-N7g" secondAttribute="bottom" id="bGC-gZ-tHD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0vp-LE-N7g" secondAttribute="trailing" id="bHc-Uk-fu8"/>
                 <constraint firstItem="0vp-LE-N7g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="c6B-OD-GH8"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bD7-kE-Dgy" secondAttribute="bottom" id="jqp-IM-fIc"/>
                 <constraint firstItem="3z9-t1-CmC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mIV-50-y5M"/>
                 <constraint firstItem="m9w-U5-ORH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pd1-Lj-wtf"/>
                 <constraint firstItem="m9w-U5-ORH" firstAttribute="top" secondItem="3z9-t1-CmC" secondAttribute="bottom" constant="5" id="rtm-8a-woY"/>
                 <constraint firstItem="0vp-LE-N7g" firstAttribute="top" secondItem="sre-AV-PBZ" secondAttribute="bottom" constant="10" id="yig-Xs-Ykl"/>
             </constraints>
-            <point key="canvasLocation" x="141" y="106"/>
+            <point key="canvasLocation" x="140.57971014492756" y="105.80357142857143"/>
         </view>
     </objects>
     <resources>

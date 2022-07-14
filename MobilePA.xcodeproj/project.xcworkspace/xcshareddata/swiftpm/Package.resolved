@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "ccrypt_blowfish",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tannerdsilva/Ccrypt_blowfish.git",
+      "state" : {
+        "revision" : "abd2bf4ca4730e05d04e9a096f3f6300653ee40c",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "swiftbcrypt",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tannerdsilva/SwiftBCrypt.git",
+      "state" : {
+        "revision" : "12521ab8c1416828b00cb4d94e450dd111df6193",
+        "version" : "0.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}

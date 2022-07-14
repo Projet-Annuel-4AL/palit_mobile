@@ -9,4 +9,6 @@ import Foundation
 
 protocol GroupService{
     func getGroups(completion: @escaping ([Group]) -> Void)
+    
+    func getPostsByIdGroup(completion: @escaping ([GroupPost]) -> Void, idGroup: Int)
 }
