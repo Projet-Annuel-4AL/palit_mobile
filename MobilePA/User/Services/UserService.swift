@@ -10,4 +10,6 @@ import Foundation
 
 protocol UserService{
     func getUserById(completion: @escaping (User) -> Void, idUser: Int)
+    
+    func getUserByMail(completion: @escaping (User) -> Void, mail: String)
 }

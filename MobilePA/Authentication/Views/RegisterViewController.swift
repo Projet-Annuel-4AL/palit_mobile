@@ -8,11 +8,24 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    var userService: UserService = UserWebService()
+    var userMail: String!
+    
+    @IBOutlet weak var mailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        registerButton.isEnabled = false;
+        let textfields : [UITextField] = [firstnameTextField, firstnameTextField, mailTextField, passwordTextField]
+        
+        for textfield in textfields {
+          textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        }
     }
 
 
@@ -21,15 +34,52 @@ class RegisterViewController: UIViewController {
             navigationController?.pushViewController(login, animated: true)
     }
     
-    @IBAction func goToMain(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+    @IBAction func register(){
+        
+        
+        guard let userMail = self.mailTextField.text else {
+            return
+        }
+                
+        self.userService.getUserByMail(completion: { user in
+        
+        }, mail: userMail)
+        
+        guard let mail = self.userMail else {
+            return
+        }
+        print(mail)
+       
+        if(self.userMail == nil){
             
-            // This is to get the SceneDelegate object from your view controller
-            // then call the change root view controller function to change to main tab bar
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        } else {
+            let alert = UIAlertController(title: "Ce mail existe déjà", message: "Essayez de vous connectez plutôt", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if mailTextField != nil && mailTextField.text != "" &&
+            passwordTextField != nil && passwordTextField.text != "" &&
+            lastnameTextField != nil && lastnameTextField.text != "" &&
+            firstnameTextField != nil && firstnameTextField.text != "" {
+            
+            registerButton.isEnabled = true
+            
+        } else {
+            registerButton.isEnabled = false
+        }
+    }
+    
+    private func configure(with model: User){
+        let user = model
+    
+        self.userMail = user.mail
+    }
+
     
     
     /*

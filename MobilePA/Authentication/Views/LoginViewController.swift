@@ -21,7 +21,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        loginButton.isEnabled = false;
+        let textfields : [UITextField] = [mailTextField, passwordTextField]
+        
+        for textfield in textfields {
+          textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        }
     }
     
     @IBAction func handleLogin(){
@@ -42,6 +48,15 @@ class LoginViewController: UIViewController {
             NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if mailTextField != nil && mailTextField.text != "" &&
+            passwordTextField != nil && passwordTextField.text != "" {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
         }
     }
 
