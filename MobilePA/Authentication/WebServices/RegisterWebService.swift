@@ -1,15 +1,16 @@
 //
-//  CreatePostWebService.swift
+//  RegisterWebService.swift
 //  MobilePA
 //
-//  Created by Lucas Angoston on 14/07/2022.
+//  Created by Lucas Angoston on 16/07/2022.
 //
 
 import Foundation
 
-class CreatePostWebService: CreatePostService {
-    func createTextPost(){
-        guard let url = URL(string: "http://52.208.34.20:3000/api/texts") else {
+class RegisterWebService : RegisterService {
+    func register(firstname: String, lastname: String, mail: String, password: String) {
+        guard let url = URL(string: "http://52.208.34.20:3000/api/auth/register") else {
+            
             return
         }
         
@@ -18,10 +19,11 @@ class CreatePostWebService: CreatePostService {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
-        //request.addValue(<#T##value: String##String#>, forHTTPHeaderField: <#T##String#>)
-        
         let body: [String: AnyHashable] = [
-            "content": "IOS, on the road !"
+            "firstName": firstname,
+            "lastName": lastname,
+            "mail": mail,
+            "password": password
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
@@ -32,15 +34,27 @@ class CreatePostWebService: CreatePostService {
                 return
             }
             
+        
             do{
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                
                 print(response)
                 
+                guard let responseParsed = response as? [String: Any] else {
+                    return
+                }
+                
+                if let httpCode = responseParsed["statusCode"] {
+                    
+                } else if let token = responseParsed["access_token"] {
+                    
+                }
+                
             } catch {
-                print(error)
             }
         }
         task.resume()
+        
+        return
     }
+
 }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftBCrypt
 
-class AuthenticationWebService: AuthenticationService {
+class LoginWebService: LoginService {
     let defaults = UserDefaults.standard
     
     func login(mail: String, password: String) {
@@ -45,6 +45,7 @@ class AuthenticationWebService: AuthenticationService {
                 }
                 
                 if let httpCode = responseParsed["statusCode"] {
+                    return
                 } else if let token = responseParsed["access_token"] {
                     let userToken: String = token as! String
                     let userData = self.decode(jwtToken: userToken)
@@ -59,6 +60,7 @@ class AuthenticationWebService: AuthenticationService {
                 }
                 
             } catch {
+                
             }
         }
         task.resume()

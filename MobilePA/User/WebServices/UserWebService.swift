@@ -43,7 +43,6 @@ class UserWebService: UserService {
                   let json = try? JSONSerialization.jsonObject(with: fetchData) as? [String: Any] else {
                 return
             }
-            print(json)
             
             guard let userObject = User(dict:json) else {
                 return

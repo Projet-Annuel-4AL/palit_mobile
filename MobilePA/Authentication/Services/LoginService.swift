@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AuthenticationService {
+protocol LoginService {
     func login(mail: String, password: String)
     
 }

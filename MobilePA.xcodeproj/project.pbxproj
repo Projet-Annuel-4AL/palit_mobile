@@ -44,8 +44,8 @@
 		047DE697287CD0C4002D068A /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE696287CD0C4002D068A /* Follow.swift */; };
 		047DE69A287CD56B002D068A /* ProfileUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */; };
 		047DE69B287CD56B002D068A /* ProfileUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */; };
-		047DE6A5287E3631002D068A /* AuthenticationWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6A4287E3631002D068A /* AuthenticationWebService.swift */; };
-		047DE6A8287E3907002D068A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6A7287E3907002D068A /* AuthenticationService.swift */; };
+		047DE6A5287E3631002D068A /* LoginWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6A4287E3631002D068A /* LoginWebService.swift */; };
+		047DE6A8287E3907002D068A /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6A7287E3907002D068A /* LoginService.swift */; };
 		047DE6AD287F623B002D068A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE6AB287F623B002D068A /* LoginViewController.swift */; };
 		04A61C5E287F6B4E00DA6775 /* SwiftBCrypt in Frameworks */ = {isa = PBXBuildFile; productRef = 04A61C5D287F6B4E00DA6775 /* SwiftBCrypt */; };
 		04A61C70287F79BB00DA6775 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C6E287F79BB00DA6775 /* RegisterViewController.swift */; };
@@ -58,6 +58,8 @@
 		04A61C8828804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C8628804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift */; };
 		04A61C8928804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A61C8728804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib */; };
 		04A61C8D2880737B00DA6775 /* GroupPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C8C2880737B00DA6775 /* GroupPost.swift */; };
+		04A61C942882210500DA6775 /* RegisterWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C932882210500DA6775 /* RegisterWebService.swift */; };
+		04A61C962882214800DA6775 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61C952882214800DA6775 /* RegisterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,8 +101,8 @@
 		047DE696287CD0C4002D068A /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		047DE698287CD56B002D068A /* ProfileUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserTableViewCell.swift; sourceTree = "<group>"; };
 		047DE699287CD56B002D068A /* ProfileUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileUserTableViewCell.xib; sourceTree = "<group>"; };
-		047DE6A4287E3631002D068A /* AuthenticationWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWebService.swift; sourceTree = "<group>"; };
-		047DE6A7287E3907002D068A /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		047DE6A4287E3631002D068A /* LoginWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebService.swift; sourceTree = "<group>"; };
+		047DE6A7287E3907002D068A /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		047DE6AB287F623B002D068A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04A61C67287F705D00DA6775 /* MobilePA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobilePA.app; path = "/Users/lucasangoston/Documents/projetAnnuel/MobilePA/build/Debug-iphoneos/MobilePA.app"; sourceTree = "<absolute>"; };
 		04A61C6E287F79BB00DA6775 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,8 @@
 		04A61C8628804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCurrentUserTableViewCell.swift; sourceTree = "<group>"; };
 		04A61C8728804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCurrentUserTableViewCell.xib; sourceTree = "<group>"; };
 		04A61C8C2880737B00DA6775 /* GroupPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPost.swift; sourceTree = "<group>"; };
+		04A61C932882210500DA6775 /* RegisterWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebService.swift; sourceTree = "<group>"; };
+		04A61C952882214800DA6775 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,7 +450,8 @@
 		047DE6A3287E3612002D068A /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
-				047DE6A4287E3631002D068A /* AuthenticationWebService.swift */,
+				047DE6A4287E3631002D068A /* LoginWebService.swift */,
+				04A61C932882210500DA6775 /* RegisterWebService.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -454,7 +459,8 @@
 		047DE6A6287E38DF002D068A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				047DE6A7287E3907002D068A /* AuthenticationService.swift */,
+				047DE6A7287E3907002D068A /* LoginService.swift */,
+				04A61C952882214800DA6775 /* RegisterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -600,7 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0469EE572879FFCC00D498D6 /* PostTableViewCell.swift in Sources */,
-				047DE6A5287E3631002D068A /* AuthenticationWebService.swift in Sources */,
+				047DE6A5287E3631002D068A /* LoginWebService.swift in Sources */,
 				0469EE8A287B03E500D498D6 /* Group.swift in Sources */,
 				047DE69A287CD56B002D068A /* ProfileUserTableViewCell.swift in Sources */,
 				0469EE4E2879FDB700D498D6 /* PostService.swift in Sources */,
@@ -611,7 +617,7 @@
 				0469EE5A287A277100D498D6 /* User.swift in Sources */,
 				047DE68D287CB64C002D068A /* UserWebService.swift in Sources */,
 				04A61C8828804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift in Sources */,
-				047DE6A8287E3907002D068A /* AuthenticationService.swift in Sources */,
+				047DE6A8287E3907002D068A /* LoginService.swift in Sources */,
 				047DE68A287CB634002D068A /* UserService.swift in Sources */,
 				047DE685287B73B1002D068A /* GroupDetailTableViewCell.swift in Sources */,
 				0469EE73287AC92700D498D6 /* Like.swift in Sources */,
@@ -629,6 +635,7 @@
 				04A61C70287F79BB00DA6775 /* RegisterViewController.swift in Sources */,
 				0469EE77287AC9DD00D498D6 /* Remark.swift in Sources */,
 				0469EE88287B03B100D498D6 /* GroupService.swift in Sources */,
+				04A61C962882214800DA6775 /* RegisterService.swift in Sources */,
 				0469EE5C287A2C8C00D498D6 /* PostText.swift in Sources */,
 				0469EE332879FAAD00D498D6 /* AppDelegate.swift in Sources */,
 				0469EE98287B181B00D498D6 /* GroupsViewController.swift in Sources */,
@@ -636,6 +643,7 @@
 				0469EE82287AFF3F00D498D6 /* RemarksViewController.swift in Sources */,
 				047DE697287CD0C4002D068A /* Follow.swift in Sources */,
 				0469EE8C287B065500D498D6 /* GroupWebService.swift in Sources */,
+				04A61C942882210500DA6775 /* RegisterWebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

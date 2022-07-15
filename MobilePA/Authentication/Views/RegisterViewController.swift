@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     var userService: UserService = UserWebService()
+    var registerService: RegisterService = RegisterWebService()
     var userMail: String!
     
     @IBOutlet weak var mailTextField: UITextField!
@@ -37,23 +38,51 @@ class RegisterViewController: UIViewController {
     @IBAction func register(){
         
         
-        guard let userMail = self.mailTextField.text else {
+        guard let firstname = self.firstnameTextField.text else {
             return
         }
-                
+        
+        guard let lastname = self.lastnameTextField.text else {
+            return
+        }
+        
+        guard let mail = self.mailTextField.text else {
+            return
+        }
+        
+        guard let password = self.passwordTextField.text else {
+            return
+        }
+        
         self.userService.getUserByMail(completion: { user in
-        
-        }, mail: userMail)
-        
-        guard let mail = self.userMail else {
-            return
-        }
-        print(mail)
+            self.configure(with: user.mail)
+        }, mail: mail)
        
         if(self.userMail == nil){
-            
+            if(password.count >= 8){
+                if(self.isValidEmail(mail)){
+                    let alert = UIAlertController(title: "Inscription Réussie !", message: "Vous n'avez plus qu'à vous connecter.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Super", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else {
+                    let alert = UIAlertController(title: "Mauvais format Email", message: "Votre email n'a pas le bon format souhaité. (exemple@test.com).", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            } else {
+                let alert = UIAlertController(title: "Votre mot de passe est trop court", message: "Votre mot de passe à besoin d'au moins 8 caractères.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
         } else {
-            let alert = UIAlertController(title: "Ce mail existe déjà", message: "Essayez de vous connectez plutôt", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Ce mail existe déjà", message: "Essayez de vous connectez plutôt.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))
@@ -74,10 +103,15 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    private func configure(with model: User){
-        let user = model
+    private func configure(with model: String){
+        self.userMail = model
+    }
     
-        self.userMail = user.mail
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
 
     

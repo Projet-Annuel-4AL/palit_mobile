@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    var authenticationService: AuthenticationService = AuthenticationWebService()
+    var loginService: LoginService = LoginWebService()
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var mailTextField: UITextField!
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func handleLogin(){
-        authenticationService.login(mail: mailTextField.text!, password: passwordTextField.text!)
+        loginService.login(mail: mailTextField.text!, password: passwordTextField.text!)
         let mail = UserDefaults.standard.string(forKey: "mail")
          
         if let user = mail {
