@@ -48,7 +48,10 @@ class LoginWebService: LoginService {
                     return
                 } else if let token = responseParsed["access_token"] {
                     let userToken: String = token as! String
-                    let userData = self.decode(jwtToken: userToken)
+                    
+                    let jwtTokenService = JwtTokenService()
+                    
+                    let userData = jwtTokenService.decode(jwtToken: userToken)
                     
                     let id = userData["sub"]
                     let username = userData["username"]
@@ -57,6 +60,7 @@ class LoginWebService: LoginService {
                     self.defaults.set(id, forKey: "id")
                     self.defaults.set(username, forKey: "username")
                     self.defaults.set(mail, forKey: "mail")
+                    self.defaults.set(userToken, forKey: "token")
                 }
                 
             } catch {
@@ -66,34 +70,5 @@ class LoginWebService: LoginService {
         task.resume()
         
         return
-    }
-    
-    func decode(jwtToken jwt: String) -> [String: Any] {
-      let segments = jwt.components(separatedBy: ".")
-      return decodeJWTPart(segments[1]) ?? [:]
-    }
-
-    func base64UrlDecode(_ value: String) -> Data? {
-      var base64 = value
-        .replacingOccurrences(of: "-", with: "+")
-        .replacingOccurrences(of: "_", with: "/")
-
-      let length = Double(base64.lengthOfBytes(using: String.Encoding.utf8))
-      let requiredLength = 4 * ceil(length / 4.0)
-      let paddingLength = requiredLength - length
-      if paddingLength > 0 {
-        let padding = "".padding(toLength: Int(paddingLength), withPad: "=", startingAt: 0)
-        base64 = base64 + padding
-      }
-      return Data(base64Encoded: base64, options: .ignoreUnknownCharacters)
-    }
-
-    func decodeJWTPart(_ value: String) -> [String: Any]? {
-      guard let bodyData = base64UrlDecode(value),
-        let json = try? JSONSerialization.jsonObject(with: bodyData, options: []), let payload = json as? [String: Any] else {
-          return nil
-      }
-
-      return payload
     }
 }

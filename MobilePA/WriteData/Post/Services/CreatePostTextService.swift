@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CreatePostService {
-    func createTextPost()
+protocol CreatePostTextService {
+    func createText(title: String, content: String)
 }

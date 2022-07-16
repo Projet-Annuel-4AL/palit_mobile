@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Palitt souhaite obtenir l&apos;accès à vos photos</string>
 </dict>
 </plist>

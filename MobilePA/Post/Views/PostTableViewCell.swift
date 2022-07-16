@@ -53,7 +53,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func goToRemarksOfPost(){
-        delegate?.goToRemarksOfPost()
+        delegate?.goToRemarksOfPost(idPost: self.model.idPost)
     }
     
     func setUserImage(){
@@ -105,7 +105,7 @@ class PostTableViewCell: UITableViewCell {
 
 protocol PostTableViewCellDelegate: AnyObject {
     func goToProfile(idUser: Int)
-    func goToRemarksOfPost()
+    func goToRemarksOfPost(idPost: Int)
 }
 
 extension String {

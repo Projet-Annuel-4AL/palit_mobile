@@ -61,17 +61,18 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
 }
 
 extension PostViewController: PostTableViewCellDelegate {
+    func goToRemarksOfPost(idPost: Int) {
+        let remarks = RemarksViewController()
+       
+        remarks.idPost = idPost
+        self.navigationController?.pushViewController(remarks, animated: true)
+    }
+    
     func goToProfile(idUser: Int) {
         let userProfile = ProfileUserViewController()
        
         userProfile.idUser = idUser
         self.navigationController?.pushViewController(userProfile, animated: true)
-    }
-    
-    func goToRemarksOfPost() {
-        let remarks = RemarksViewController()
-       
-        self.navigationController?.pushViewController(remarks, animated: true)
     }
 }
 
