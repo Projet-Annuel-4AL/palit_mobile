@@ -15,7 +15,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var postText: UILabel!
     @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var remarksCount: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
     
+    var likeService: LikeService = LikeWebService()
+    var isliked: Bool!
     var delegate: PostTableViewCellDelegate?
     var model: Post!
     
@@ -27,8 +30,8 @@ class PostTableViewCell: UITableViewCell {
     
      override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+    
+     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -36,8 +39,9 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
         
-    func configure(with model: Post){
+    func configure(with model: Post, isLiked: Bool){
         self.model = model
+        self.isliked = isLiked
         
         self.setUserImage()
         self.setUserName()
@@ -46,10 +50,24 @@ class PostTableViewCell: UITableViewCell {
         self.setLikesCount()
         self.setRemarksCount()
         self.setLikesCount()
+        self.setLikeButton()
     }
     
     @IBAction func goToProfile(){
         delegate?.goToProfile(idUser: self.model.user.idUser)
+    }
+    
+    @IBAction func handleLike(){
+        if !self.isliked {
+            self.likeButton.tintColor = UIColor.purple
+            self.isliked = true
+            self.likeService.createlike(idPost: model.idPost)
+        } else {
+            self.likeButton.tintColor = UIColor.black
+            self.isliked = false
+            let idLikeToDelete = self.getIdLike(likes: model.likes)
+            self.likeService.deleteLike(idLike: idLikeToDelete)
+        }
     }
     
     @IBAction func goToRemarksOfPost(){
@@ -100,6 +118,28 @@ class PostTableViewCell: UITableViewCell {
         self.remarksCount.text = String(remarksCount)
     }
     
+    func setLikeButton(){
+        if self.isliked {
+            self.likeButton.tintColor = UIColor.purple
+        } else {
+            self.likeButton.tintColor = UIColor.black
+        }
+    }
+    
+    func getIdLike(likes: [Like]) -> Int {
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let idUser = idCurentUser else {
+            return 0
+        }
+        
+        for like in likes {
+            if like.idUser == Int(idUser) {
+                return like.idLike
+            }
+        }
+        return 0
+    }
     
 }
 

@@ -72,13 +72,16 @@
                         <rect key="frame" x="0.0" y="397" width="515" height="50"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmt-EM-bQa">
-                                <rect key="frame" x="50" y="9.5" width="45.5" height="31"/>
+                                <rect key="frame" x="50" y="9.5" width="46" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="handleLike" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bjg-kr-b2A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx8-7S-ELJ">
-                                <rect key="frame" x="193.5" y="9.5" width="47" height="31"/>
+                                <rect key="frame" x="194" y="9.5" width="47" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="message" catalog="system"/>
@@ -87,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKi-ZK-ibr">
-                                <rect key="frame" x="320.5" y="9.5" width="46.5" height="31"/>
+                                <rect key="frame" x="321" y="9.5" width="46.5" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system"/>
@@ -99,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-XU-thp">
-                                <rect key="frame" x="170.5" y="14.5" width="18" height="21"/>
+                                <rect key="frame" x="171" y="14.5" width="18" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -155,6 +158,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="buttonUserName" destination="dCs-nH-sYa" id="VQG-lT-I8b"/>
+                <outlet property="likeButton" destination="rmt-EM-bQa" id="Lzk-CX-s9C"/>
                 <outlet property="likesCount" destination="SUc-OX-sbn" id="ZPI-n7-97L"/>
                 <outlet property="postText" destination="eyZ-uA-D38" id="qFa-20-vbl"/>
                 <outlet property="remarksCount" destination="Z9c-XU-thp" id="sAM-6c-nhv"/>
@@ -166,7 +170,7 @@
     </objects>
     <resources>
         <image name="groupImg" width="2560" height="1440"/>
-        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
+        <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <systemColor name="labelColor">

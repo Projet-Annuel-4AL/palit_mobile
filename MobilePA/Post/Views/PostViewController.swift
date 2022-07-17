@@ -37,7 +37,10 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
         
-        cell.configure(with: self.posts[indexPath.row])
+        let isLiked = getIdLike(likes: self.posts[indexPath.row].likes)
+        
+        cell.isliked = isLiked
+        cell.configure(with: self.posts[indexPath.row], isLiked: isLiked)
         cell.delegate = self
         
         return cell
@@ -56,6 +59,20 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         return nil
     }
     
+    func getIdLike(likes: [Like]) -> Bool {
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let idUser = idCurentUser else {
+            return false
+        }
+        
+        for like in likes {
+            if like.idUser == Int(idUser) {
+                return true
+            }
+        }
+        return false
+    }
     
 
 }

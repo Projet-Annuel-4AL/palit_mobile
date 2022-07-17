@@ -70,6 +70,8 @@
 		04A61CB02883488800DA6775 /* RemarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CAE2883488800DA6775 /* RemarkTableViewCell.swift */; };
 		04A61CB12883488800DA6775 /* RemarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A61CAF2883488800DA6775 /* RemarkTableViewCell.xib */; };
 		04A61CB3288368C100DA6775 /* Remark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CB2288368C000DA6775 /* Remark.swift */; };
+		04A61CB728837E6800DA6775 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CB628837E6800DA6775 /* LikeService.swift */; };
+		04A61CB928837F0B00DA6775 /* LikeWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CB828837F0B00DA6775 /* LikeWebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,8 @@
 		04A61CAE2883488800DA6775 /* RemarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkTableViewCell.swift; sourceTree = "<group>"; };
 		04A61CAF2883488800DA6775 /* RemarkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkTableViewCell.xib; sourceTree = "<group>"; };
 		04A61CB2288368C000DA6775 /* Remark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remark.swift; sourceTree = "<group>"; };
+		04A61CB628837E6800DA6775 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		04A61CB828837F0B00DA6775 /* LikeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeWebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,8 @@
 		0469EE6F287AC8F400D498D6 /* Likes */ = {
 			isa = PBXGroup;
 			children = (
+				04A61CB528837E3100DA6775 /* Services */,
+				04A61CB428837E2800DA6775 /* WebServices */,
 				0469EE71287AC91B00D498D6 /* Models */,
 			);
 			path = Likes;
@@ -572,6 +578,22 @@
 			path = WebServices;
 			sourceTree = "<group>";
 		};
+		04A61CB428837E2800DA6775 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				04A61CB828837F0B00DA6775 /* LikeWebService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		04A61CB528837E3100DA6775 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04A61CB628837E6800DA6775 /* LikeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -695,7 +717,9 @@
 				047DE695287CD0B9002D068A /* FollowService.swift in Sources */,
 				04A61C70287F79BB00DA6775 /* RegisterViewController.swift in Sources */,
 				0469EE77287AC9DD00D498D6 /* RemarkPost.swift in Sources */,
+				04A61CB728837E6800DA6775 /* LikeService.swift in Sources */,
 				04A61CAB2882F71900DA6775 /* RemarksService.swift in Sources */,
+				04A61CB928837F0B00DA6775 /* LikeWebService.swift in Sources */,
 				0469EE88287B03B100D498D6 /* GroupService.swift in Sources */,
 				04A61C962882214800DA6775 /* RegisterService.swift in Sources */,
 				0469EE5C287A2C8C00D498D6 /* PostText.swift in Sources */,

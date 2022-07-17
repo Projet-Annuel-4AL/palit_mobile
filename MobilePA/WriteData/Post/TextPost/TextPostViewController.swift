@@ -49,9 +49,26 @@ class TextPostViewController: UIViewController, UITextViewDelegate {
             return
         }
         
-        creationPostService.createText(title: title, content: content)
+        print(content.utf8EncodedString())
+        
+        if title.isEmpty {
+            let alert = UIAlertController(title: "Votre titre semble vide", message: "Voici quelques idées: Mon premier Post, Faire son PA à 3h...", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if content.isEmpty || self.contentText.textColor == UIColor.lightGray {
+                let alert = UIAlertController(title: "Vous n'avez pas de contenu à partager", message: "Raconter ce qui vous passe par la tête !", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            creationPostService.createText(title: title, content: content)
+        }
     }
-
 
     /*
     // MARK: - Navigation
@@ -63,4 +80,18 @@ class TextPostViewController: UIViewController, UITextViewDelegate {
     }
     */
 
+}
+
+extension String {
+    func utf8DecodedString()-> String {
+        let data = self.data(using: .utf8)
+        let message = String(data: data!, encoding: .nonLossyASCII) ?? ""
+        return message
+    }
+    
+    func utf8EncodedString()-> String {
+        let messageData = self.data(using: .nonLossyASCII)
+        let text = String(data: messageData!, encoding: .utf8) ?? ""
+        return text
+    }
 }
