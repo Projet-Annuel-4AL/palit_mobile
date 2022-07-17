@@ -53,32 +53,32 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPV-Hm-QqF">
                         <rect key="frame" x="0.0" y="336" width="495" height="50"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnb-tH-rEq">
-                                <rect key="frame" x="70" y="9.5" width="45.5" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnb-tH-rEq">
+                                <rect key="frame" x="30" y="9.5" width="45.5" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup" catalog="system" title=""/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOK-cY-5uC">
-                                <rect key="frame" x="212" y="9.5" width="47" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOK-cY-5uC">
+                                <rect key="frame" x="224" y="9.5" width="47" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="message" catalog="system" title=""/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sen-O5-oel">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sen-O5-oel">
                                 <rect key="frame" x="418" y="9.5" width="47" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system" title=""/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWj-e6-xDY">
-                                <rect key="frame" x="186" y="14.5" width="18" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWj-e6-xDY">
+                                <rect key="frame" x="206" y="14.5" width="18" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOM-RH-iQc">
-                                <rect key="frame" x="48" y="14.5" width="18" height="21"/>
+                                <rect key="frame" x="12" y="14.5" width="18" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,15 +87,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="4ZS-Qx-3gC"/>
-                            <constraint firstItem="Fnb-tH-rEq" firstAttribute="leading" secondItem="iPV-Hm-QqF" secondAttribute="leading" constant="70" id="4qT-m6-btt"/>
+                            <constraint firstItem="Fnb-tH-rEq" firstAttribute="leading" secondItem="iPV-Hm-QqF" secondAttribute="leading" constant="30" id="4qT-m6-btt"/>
                             <constraint firstAttribute="trailing" secondItem="sen-O5-oel" secondAttribute="trailing" constant="30" id="CNb-Tf-l0H"/>
                             <constraint firstItem="lOM-RH-iQc" firstAttribute="centerY" secondItem="iPV-Hm-QqF" secondAttribute="centerY" id="Olk-z8-EQJ"/>
-                            <constraint firstItem="XOK-cY-5uC" firstAttribute="leading" secondItem="JWj-e6-xDY" secondAttribute="trailing" constant="20" id="STY-MQ-gxD"/>
+                            <constraint firstItem="XOK-cY-5uC" firstAttribute="leading" secondItem="JWj-e6-xDY" secondAttribute="trailing" id="STY-MQ-gxD"/>
                             <constraint firstItem="Fnb-tH-rEq" firstAttribute="centerY" secondItem="iPV-Hm-QqF" secondAttribute="centerY" id="X0b-I0-qJJ"/>
-                            <constraint firstItem="sen-O5-oel" firstAttribute="leading" secondItem="XOK-cY-5uC" secondAttribute="trailing" constant="104" id="XNR-gl-5b0"/>
-                            <constraint firstItem="Fnb-tH-rEq" firstAttribute="leading" secondItem="lOM-RH-iQc" secondAttribute="trailing" constant="4" id="b22-cG-avs"/>
+                            <constraint firstItem="Fnb-tH-rEq" firstAttribute="leading" secondItem="lOM-RH-iQc" secondAttribute="trailing" id="b22-cG-avs"/>
+                            <constraint firstItem="XOK-cY-5uC" firstAttribute="centerX" secondItem="iPV-Hm-QqF" secondAttribute="centerX" id="g0A-vN-1p3"/>
                             <constraint firstItem="sen-O5-oel" firstAttribute="centerY" secondItem="iPV-Hm-QqF" secondAttribute="centerY" id="jRV-2F-BcT"/>
-                            <constraint firstItem="XOK-cY-5uC" firstAttribute="leading" secondItem="Fnb-tH-rEq" secondAttribute="trailing" constant="105" id="pzR-st-wf6"/>
                             <constraint firstItem="XOK-cY-5uC" firstAttribute="centerY" secondItem="iPV-Hm-QqF" secondAttribute="centerY" id="t9c-7d-wJZ"/>
                             <constraint firstItem="JWj-e6-xDY" firstAttribute="centerY" secondItem="iPV-Hm-QqF" secondAttribute="centerY" id="wqm-3d-0yr"/>
                         </constraints>

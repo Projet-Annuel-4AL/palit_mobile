@@ -12,9 +12,6 @@ class GroupPost {
     let idPost: String
     let idGroup: String
     let post: Post
-    var description: String {
-        return "idGoupPost: \(self.idGroupPost), post: \(self.idPost), group: \(self.idGroup)"
-    }
     
     internal init(idGroupPost: Int, idPost: String, idGroup: String, post: Post) {
         self.idGroupPost = idGroupPost

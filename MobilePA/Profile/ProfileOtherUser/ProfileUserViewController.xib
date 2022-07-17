@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileUserViewController" customModule="MobilePA" customModuleProvider="target">
             <connections>
+                <outlet property="followButton" destination="9QB-u2-IL3" id="6v7-5J-Ofg"/>
                 <outlet property="postsUserTableView" destination="Bav-y1-D1s" id="2az-42-Xv9"/>
                 <outlet property="userName" destination="m9w-U5-ORH" id="yPU-ou-XwC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,18 +42,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-LE-N7g">
                     <rect key="frame" x="0.0" y="239" width="414" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7Q-YI-FqA">
-                            <rect key="frame" x="40" y="14.5" width="81" height="31"/>
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Abonnés"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ6-Su-ZWb">
-                            <rect key="frame" x="260" y="14.5" width="114" height="31"/>
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Abonnements"/>
-                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eva-nW-MNS">
                             <rect key="frame" x="0.0" y="55" width="414" height="5"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,16 +49,23 @@
                                 <constraint firstAttribute="height" constant="5" id="0AF-t0-XzL"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QB-u2-IL3">
+                            <rect key="frame" x="174.5" y="14.5" width="65" height="31"/>
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Suivre"/>
+                            <connections>
+                                <action selector="handleFollow" destination="-1" eventType="touchUpInside" id="hUu-aH-OAf"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="eva-nW-MNS" secondAttribute="bottom" id="2JF-ZY-84T"/>
-                        <constraint firstItem="U7Q-YI-FqA" firstAttribute="centerY" secondItem="0vp-LE-N7g" secondAttribute="centerY" id="3AE-XD-145"/>
-                        <constraint firstAttribute="trailing" secondItem="mQ6-Su-ZWb" secondAttribute="trailing" constant="40" id="7Nr-7D-P4k"/>
                         <constraint firstItem="eva-nW-MNS" firstAttribute="leading" secondItem="0vp-LE-N7g" secondAttribute="leading" id="8Wt-zK-r9L"/>
                         <constraint firstAttribute="trailing" secondItem="eva-nW-MNS" secondAttribute="trailing" id="9BL-WF-ehw"/>
-                        <constraint firstItem="U7Q-YI-FqA" firstAttribute="leading" secondItem="0vp-LE-N7g" secondAttribute="leading" constant="40" id="Scw-YG-5rC"/>
-                        <constraint firstItem="mQ6-Su-ZWb" firstAttribute="centerY" secondItem="0vp-LE-N7g" secondAttribute="centerY" id="oFd-we-lrd"/>
+                        <constraint firstItem="9QB-u2-IL3" firstAttribute="centerY" secondItem="0vp-LE-N7g" secondAttribute="centerY" id="Cbg-BD-mAh"/>
+                        <constraint firstItem="9QB-u2-IL3" firstAttribute="centerX" secondItem="0vp-LE-N7g" secondAttribute="centerX" id="bRk-zN-KQx"/>
                         <constraint firstAttribute="height" constant="60" id="p5Z-bO-w0J"/>
                     </constraints>
                 </view>
@@ -100,11 +96,11 @@
     </objects>
     <resources>
         <image name="profileImg" width="1000" height="600"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

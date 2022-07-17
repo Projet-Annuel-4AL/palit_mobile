@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="397" width="515" height="50"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmt-EM-bQa">
-                                <rect key="frame" x="50" y="9.5" width="46" height="31"/>
+                                <rect key="frame" x="30" y="9.5" width="46" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system" title=""/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx8-7S-ELJ">
-                                <rect key="frame" x="194" y="9.5" width="47" height="31"/>
+                                <rect key="frame" x="234" y="9.5" width="47" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="message" catalog="system"/>
@@ -90,19 +90,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKi-ZK-ibr">
-                                <rect key="frame" x="321" y="9.5" width="46.5" height="31"/>
+                                <rect key="frame" x="438.5" y="9.5" width="46.5" height="31"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paperplane" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUc-OX-sbn">
-                                <rect key="frame" x="27" y="14.5" width="18" height="21"/>
+                                <rect key="frame" x="12" y="14.5" width="18" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-XU-thp">
-                                <rect key="frame" x="171" y="14.5" width="18" height="21"/>
+                                <rect key="frame" x="216" y="14.5" width="18" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -110,16 +110,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rmt-EM-bQa" firstAttribute="leading" secondItem="SUc-OX-sbn" secondAttribute="trailing" constant="5" id="0J8-BH-neY"/>
+                            <constraint firstItem="rmt-EM-bQa" firstAttribute="leading" secondItem="SUc-OX-sbn" secondAttribute="trailing" id="0J8-BH-neY"/>
                             <constraint firstItem="Dx8-7S-ELJ" firstAttribute="centerY" secondItem="MdN-Vx-Sfc" secondAttribute="centerY" id="0yw-hb-3dd"/>
-                            <constraint firstItem="rmt-EM-bQa" firstAttribute="leading" secondItem="MdN-Vx-Sfc" secondAttribute="leading" constant="50" id="1QF-83-6vh"/>
+                            <constraint firstItem="rmt-EM-bQa" firstAttribute="leading" secondItem="MdN-Vx-Sfc" secondAttribute="leading" constant="30" id="1QF-83-6vh"/>
+                            <constraint firstAttribute="trailing" secondItem="NKi-ZK-ibr" secondAttribute="trailing" constant="30" id="F0i-J6-381"/>
                             <constraint firstItem="NKi-ZK-ibr" firstAttribute="centerY" secondItem="MdN-Vx-Sfc" secondAttribute="centerY" id="ITx-vK-ULw"/>
                             <constraint firstItem="rmt-EM-bQa" firstAttribute="centerY" secondItem="MdN-Vx-Sfc" secondAttribute="centerY" id="K5c-NI-Hj7"/>
-                            <constraint firstItem="Dx8-7S-ELJ" firstAttribute="leading" secondItem="Z9c-XU-thp" secondAttribute="trailing" constant="5" id="R0y-PN-8cI"/>
+                            <constraint firstItem="Dx8-7S-ELJ" firstAttribute="leading" secondItem="Z9c-XU-thp" secondAttribute="trailing" id="R0y-PN-8cI"/>
                             <constraint firstAttribute="height" constant="50" id="UoR-cc-Ib4"/>
-                            <constraint firstItem="Z9c-XU-thp" firstAttribute="leading" secondItem="rmt-EM-bQa" secondAttribute="trailing" constant="75" id="bhV-Mf-GkZ"/>
+                            <constraint firstItem="Dx8-7S-ELJ" firstAttribute="centerX" secondItem="MdN-Vx-Sfc" secondAttribute="centerX" id="YcE-Qn-jg4"/>
                             <constraint firstItem="SUc-OX-sbn" firstAttribute="centerY" secondItem="MdN-Vx-Sfc" secondAttribute="centerY" id="g45-I4-MXW"/>
-                            <constraint firstItem="NKi-ZK-ibr" firstAttribute="leading" secondItem="Dx8-7S-ELJ" secondAttribute="trailing" constant="80" id="imZ-UV-Id0"/>
                             <constraint firstItem="Z9c-XU-thp" firstAttribute="centerY" secondItem="MdN-Vx-Sfc" secondAttribute="centerY" id="yPx-ya-DV3"/>
                         </constraints>
                     </view>

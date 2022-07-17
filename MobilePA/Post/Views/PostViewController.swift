@@ -86,10 +86,18 @@ extension PostViewController: PostTableViewCellDelegate {
     }
     
     func goToProfile(idUser: Int) {
-        let userProfile = ProfileUserViewController()
-       
-        userProfile.idUser = idUser
-        self.navigationController?.pushViewController(userProfile, animated: true)
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let currentUser = idCurentUser else {
+            return
+        }
+        
+        if idUser != Int(currentUser) {
+            let userProfile = ProfileUserViewController()
+           
+            userProfile.idUser = idUser
+            self.navigationController?.pushViewController(userProfile, animated: true)
+        }
     }
 }
 

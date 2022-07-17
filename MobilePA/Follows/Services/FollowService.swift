@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+protocol FollowService{
+    func getUserFollowedById(completion: @escaping ([Follow]) -> Void)
+    
+    func createFollow(idUser: Int)
+    
+    func deleteFollow(idFollow: Int)
+    
+    func getFollowByUserFollowingAndUserFollowed(completion: @escaping (Follow) -> Void, idUserFollowed: Int)
+}
