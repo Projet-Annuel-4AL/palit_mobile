@@ -7,68 +7,114 @@
 
 import UIKit
 
-class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var groupCollectionView: UICollectionView!
+    @IBOutlet weak var tableViewGroup: UITableView!
+    let cellSpacingHeight: CGFloat = 5
     
     var groupService: GroupService = GroupWebService()
+    var groupsByUser: [GroupUser] = []
     var groups: [Group] = [] {
         didSet {
-            self.groupCollectionView.reloadData() // recharge la tableview
+            self.tableViewGroup.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.groupCollectionView.register(GroupsCollectionViewCell.nib(), forCellWithReuseIdentifier: GroupsCollectionViewCell.identifier)
+        self.tableViewGroup.separatorColor = UIColor.white;
+        
+        self.tableViewGroup.register(GroupsTableViewCell.nib(), forCellReuseIdentifier: GroupsTableViewCell.identifier)
+        
         self.groupService.getGroups { groups in
             self.groups = groups
         }
         
-        self.groupCollectionView.delegate = self
-        self.groupCollectionView.dataSource = self
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let idUser = idCurentUser else {
+            return
+        }
+        
+        self.groupService.getGroupsByUserId(completion: { groups in
+            self.groupsByUser = groups
+        }, idUser: idUser)
+        
+        self.tableViewGroup.delegate = self
+        self.tableViewGroup.dataSource = self
         // Do any additional setup after loading the view.
     }
-
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return groups.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = groupCollectionView.dequeueReusableCell(withReuseIdentifier: GroupsCollectionViewCell.identifier, for: indexPath) as! GroupsCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: GroupsTableViewCell.identifier, for: indexPath) as! GroupsTableViewCell
         
         cell.configure(with: groups[indexPath.row])
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let group = groups[indexPath.row]
+              
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let idUser = idCurentUser else {
+            return
+        }
+        
+        if Int(idUser) == group.idUser {
+            let alert = UIAlertController(title: "Suppression en cours...", message: "Voulez-vous supprimez-votre groupe ?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Non", comment: "Default action"), style: .cancel, handler: nil ))
+            
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Oui", comment: ""), style: .destructive, handler: { action in
+                self.groupService.deleteGroup(idGroup: group.idGroup)
+                let alert = UIAlertController(title: "Suppression", message: "Groupe Supprimé ", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        } else {
+            let alert = UIAlertController(title: "Oups !", message: "Hum, ça ne semble pas être votre groupe ... Vous ne pouvez pas le supprimer", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groups.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let groupDetail = GroupDetailViewController()
-        
+                
         let group = self.groups[indexPath.row]
+        let isJoined = doesGroupIsJoin(groups: self.groupsByUser, idGroup: group.idGroup)
         
+        groupDetail.isJoined = isJoined
         groupDetail.group = group
-        
        
         self.navigationController!.pushViewController(groupDetail,animated:true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 300, height: 250)
+    private func doesGroupIsJoin(groups: [GroupUser], idGroup: Int) -> Bool {
+        for group in groups {
+            if group.group.idGroup == idGroup {
+                return true
+            }
+        }
+        return false
     }
-    
-   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

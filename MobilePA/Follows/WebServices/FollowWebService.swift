@@ -29,7 +29,6 @@ class FollowWebService: FollowService {
                 completion([])
                 return
             }
-            print(json)
             let follows  = json.compactMap{ follow in
                 Follow(dict: follow)
             }
@@ -82,10 +81,8 @@ class FollowWebService: FollowService {
             do{
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 
-                print(response)
                 
             } catch {
-                print(error)
             }
         }
         task.resume()
@@ -120,10 +117,7 @@ class FollowWebService: FollowService {
             do{
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 
-                print(response)
-                
             } catch {
-                print(error)
             }
         }
         task.resume()

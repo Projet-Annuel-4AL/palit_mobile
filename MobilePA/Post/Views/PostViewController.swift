@@ -22,7 +22,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationItem.hidesBackButton = true
         self.tableViewPost.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         
@@ -48,7 +48,7 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return cellSpacingHeight
+        return cellSpacingHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,8 +73,6 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return false
     }
-    
-
 }
 
 extension PostViewController: PostTableViewCellDelegate {

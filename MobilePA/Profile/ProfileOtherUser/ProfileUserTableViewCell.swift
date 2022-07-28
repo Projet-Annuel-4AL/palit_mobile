@@ -52,8 +52,7 @@ class ProfileUserTableViewCell: UITableViewCell {
         self.postTitle.text = self.models.title
     }
     
-    private func setPostContent(){
-        
+    private func setPostContent(){ 
         self.postContent.numberOfLines = 0
         self.postContent.text = models.text.content
     }

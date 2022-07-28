@@ -13,14 +13,14 @@ class User {
     let firstName: String
     let lastName: String
     let mail: String
-    let password: String
+    let avatar: Avatar
     
-    internal init(idUser: Int, firstName: String, lastName: String, mail: String, password: String) {
+    internal init(idUser: Int, firstName: String, lastName: String, mail: String, avatar: Avatar) {
         self.idUser = idUser
         self.firstName = firstName
         self.lastName = lastName
         self.mail = mail
-        self.password = password
+        self.avatar = avatar
     }
     
     
@@ -29,11 +29,11 @@ class User {
               let firstName = dict["firstName"] as? String,
               let lastName = dict["lastName"] as? String,
               let mail = dict["mail"] as? String,
-              let password = dict["password"] as? String else {
+              let avatar = dict["avatar"] as? [String: Any],
+              let avatarObject = Avatar(dict: avatar) else {
             return nil
         }
         
-        
-        self.init(idUser: idUser, firstName: firstName, lastName: lastName, mail: mail, password: password)
+        self.init(idUser: idUser, firstName: firstName, lastName: lastName, mail: mail, avatar: avatarObject)
     }
 }

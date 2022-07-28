@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04423AED2891712300C0E559 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04423AEB2891712300C0E559 /* CreateGroupViewController.swift */; };
+		04423AF12891820000C0E559 /* GroupUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04423AF02891820000C0E559 /* GroupUser.swift */; };
+		04423AF32891F27500C0E559 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04423AF22891F27500C0E559 /* Avatar.swift */; };
 		0469EE332879FAAD00D498D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE322879FAAD00D498D6 /* AppDelegate.swift */; };
 		0469EE352879FAAD00D498D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE342879FAAD00D498D6 /* SceneDelegate.swift */; };
 		0469EE372879FAAD00D498D6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE362879FAAD00D498D6 /* PostViewController.swift */; };
@@ -30,8 +33,6 @@
 		0469EE88287B03B100D498D6 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE87287B03B100D498D6 /* GroupService.swift */; };
 		0469EE8A287B03E500D498D6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE89287B03E500D498D6 /* Group.swift */; };
 		0469EE8C287B065500D498D6 /* GroupWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE8B287B065500D498D6 /* GroupWebService.swift */; };
-		0469EE94287B081500D498D6 /* GroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE92287B081500D498D6 /* GroupsCollectionViewCell.swift */; };
-		0469EE95287B081500D498D6 /* GroupsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0469EE93287B081500D498D6 /* GroupsCollectionViewCell.xib */; };
 		0469EE98287B181B00D498D6 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE96287B181B00D498D6 /* GroupsViewController.swift */; };
 		047DE67F287B6086002D068A /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DE67D287B6086002D068A /* GroupDetailViewController.swift */; };
 		047DE680287B6086002D068A /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047DE67E287B6086002D068A /* GroupDetailViewController.xib */; };
@@ -72,9 +73,16 @@
 		04A61CB3288368C100DA6775 /* Remark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CB2288368C000DA6775 /* Remark.swift */; };
 		04A61CB728837E6800DA6775 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CB628837E6800DA6775 /* LikeService.swift */; };
 		04A61CB928837F0B00DA6775 /* LikeWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CB828837F0B00DA6775 /* LikeWebService.swift */; };
+		04A61CBE2885E70000DA6775 /* PostCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CBD2885E70000DA6775 /* PostCode.swift */; };
+		04A61CC02885E70D00DA6775 /* PostPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61CBF2885E70D00DA6775 /* PostPicture.swift */; };
+		04A61D202888B91400DA6775 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61D1E2888B91400DA6775 /* GroupsTableViewCell.swift */; };
+		04A61D212888B91400DA6775 /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A61D1F2888B91400DA6775 /* GroupsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04423AEB2891712300C0E559 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		04423AF02891820000C0E559 /* GroupUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUser.swift; sourceTree = "<group>"; };
+		04423AF22891F27500C0E559 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		0469EE322879FAAD00D498D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0469EE342879FAAD00D498D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0469EE362879FAAD00D498D6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +107,6 @@
 		0469EE87287B03B100D498D6 /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		0469EE89287B03E500D498D6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		0469EE8B287B065500D498D6 /* GroupWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupWebService.swift; sourceTree = "<group>"; };
-		0469EE92287B081500D498D6 /* GroupsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCollectionViewCell.swift; sourceTree = "<group>"; };
-		0469EE93287B081500D498D6 /* GroupsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0469EE96287B181B00D498D6 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		047DE67D287B6086002D068A /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		047DE67E287B6086002D068A /* GroupDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupDetailViewController.xib; sourceTree = "<group>"; };
@@ -116,7 +122,6 @@
 		047DE6A4287E3631002D068A /* LoginWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebService.swift; sourceTree = "<group>"; };
 		047DE6A7287E3907002D068A /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		047DE6AB287F623B002D068A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		04A61C67287F705D00DA6775 /* MobilePA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobilePA.app; path = "/Users/lucasangoston/Documents/projetAnnuel/MobilePA/build/Debug-iphoneos/MobilePA.app"; sourceTree = "<absolute>"; };
 		04A61C6E287F79BB00DA6775 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		04A61C73287F932500DA6775 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		04A61C74287F932500DA6775 /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
@@ -141,6 +146,11 @@
 		04A61CB2288368C000DA6775 /* Remark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remark.swift; sourceTree = "<group>"; };
 		04A61CB628837E6800DA6775 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
 		04A61CB828837F0B00DA6775 /* LikeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeWebService.swift; sourceTree = "<group>"; };
+		04A61CBB2885E4E300DA6775 /* MobilePA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilePA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A61CBD2885E70000DA6775 /* PostCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCode.swift; sourceTree = "<group>"; };
+		04A61CBF2885E70D00DA6775 /* PostPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPicture.swift; sourceTree = "<group>"; };
+		04A61D1E2888B91400DA6775 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		04A61D1F2888B91400DA6775 /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0469EE312879FAAD00D498D6 /* MobilePA */,
+				04A61CBB2885E4E300DA6775 /* MobilePA.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,7 +184,6 @@
 				0469EE6B287AC78500D498D6 /* Profile */,
 				0469EE5E287A474D00D498D6 /* Post */,
 				04A61C97288255E500DA6775 /* Utils */,
-				04A61C72287F92D300DA6775 /* WriteData */,
 				047DE69C287E2801002D068A /* Authentication */,
 				0469EE322879FAAD00D498D6 /* AppDelegate.swift */,
 				0469EE342879FAAD00D498D6 /* SceneDelegate.swift */,
@@ -221,6 +231,7 @@
 		0469EE5E287A474D00D498D6 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				04A61C72287F92D300DA6775 /* WriteData */,
 				0469EE7E287AFEFB00D498D6 /* Views */,
 				0469EE482879FD5500D498D6 /* Models */,
 				0469EE492879FD5F00D498D6 /* Services */,
@@ -253,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				0469EE5B287A2C8C00D498D6 /* PostText.swift */,
+				04A61CBD2885E70000DA6775 /* PostCode.swift */,
+				04A61CBF2885E70D00DA6775 /* PostPicture.swift */,
 			);
 			path = ContentPost;
 			sourceTree = "<group>";
@@ -281,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				0469EE59287A277100D498D6 /* User.swift */,
+				04423AF22891F27500C0E559 /* Avatar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +374,7 @@
 			children = (
 				0469EE89287B03E500D498D6 /* Group.swift */,
 				04A61C8C2880737B00DA6775 /* GroupPost.swift */,
+				04423AF02891820000C0E559 /* GroupUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,6 +401,7 @@
 				047DE682287B609B002D068A /* Groupcell */,
 				047DE681287B608F002D068A /* GroupDetail */,
 				0469EE96287B181B00D498D6 /* GroupsViewController.swift */,
+				04423AEB2891712300C0E559 /* CreateGroupViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,8 +420,8 @@
 		047DE682287B609B002D068A /* Groupcell */ = {
 			isa = PBXGroup;
 			children = (
-				0469EE92287B081500D498D6 /* GroupsCollectionViewCell.swift */,
-				0469EE93287B081500D498D6 /* GroupsCollectionViewCell.xib */,
+				04A61D1E2888B91400DA6775 /* GroupsTableViewCell.swift */,
+				04A61D1F2888B91400DA6775 /* GroupsTableViewCell.xib */,
 			);
 			path = Groupcell;
 			sourceTree = "<group>";
@@ -500,7 +516,12 @@
 		04A61C72287F92D300DA6775 /* WriteData */ = {
 			isa = PBXGroup;
 			children = (
-				04A61C8A2880732900DA6775 /* Post */,
+				04A61C7D287FA74D00DA6775 /* Services */,
+				04A61C7C287FA72200DA6775 /* WebServices */,
+				04A61C77287FA1F700DA6775 /* TextPost */,
+				04A61C9A2882E97300DA6775 /* PicturePost */,
+				04A61C73287F932500DA6775 /* CreatePostViewController.swift */,
+				04A61C74287F932500DA6775 /* CreatePostViewController.xib */,
 			);
 			path = WriteData;
 			sourceTree = "<group>";
@@ -530,19 +551,6 @@
 				04A61CA12882F2C500DA6775 /* CreatePostPictureService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		04A61C8A2880732900DA6775 /* Post */ = {
-			isa = PBXGroup;
-			children = (
-				04A61C7D287FA74D00DA6775 /* Services */,
-				04A61C7C287FA72200DA6775 /* WebServices */,
-				04A61C77287FA1F700DA6775 /* TextPost */,
-				04A61C9A2882E97300DA6775 /* PicturePost */,
-				04A61C73287F932500DA6775 /* CreatePostViewController.swift */,
-				04A61C74287F932500DA6775 /* CreatePostViewController.xib */,
-			);
-			path = Post;
 			sourceTree = "<group>";
 		};
 		04A61C97288255E500DA6775 /* Utils */ = {
@@ -614,7 +622,7 @@
 				04A61C5D287F6B4E00DA6775 /* SwiftBCrypt */,
 			);
 			productName = MobilePA;
-			productReference = 04A61C67287F705D00DA6775 /* MobilePA.app */;
+			productReference = 04A61CBB2885E4E300DA6775 /* MobilePA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -665,10 +673,10 @@
 				0469EE3F2879FAAE00D498D6 /* LaunchScreen.storyboard in Resources */,
 				047DE686287B73B1002D068A /* GroupDetailTableViewCell.xib in Resources */,
 				0469EE83287AFF3F00D498D6 /* RemarksViewController.xib in Resources */,
+				04A61D212888B91400DA6775 /* GroupsTableViewCell.xib in Resources */,
 				04A61C76287F932500DA6775 /* CreatePostViewController.xib in Resources */,
 				047DE69B287CD56B002D068A /* ProfileUserTableViewCell.xib in Resources */,
 				0469EE3C2879FAAE00D498D6 /* Assets.xcassets in Resources */,
-				0469EE95287B081500D498D6 /* GroupsCollectionViewCell.xib in Resources */,
 				047DE680287B6086002D068A /* GroupDetailViewController.xib in Resources */,
 				04A61C8928804FFA00DA6775 /* ProfileCurrentUserTableViewCell.xib in Resources */,
 				0469EE3A2879FAAD00D498D6 /* Main.storyboard in Resources */,
@@ -699,6 +707,8 @@
 				0469EE5A287A277100D498D6 /* User.swift in Sources */,
 				047DE68D287CB64C002D068A /* UserWebService.swift in Sources */,
 				04A61C8828804FFA00DA6775 /* ProfileCurrentUserTableViewCell.swift in Sources */,
+				04A61D202888B91400DA6775 /* GroupsTableViewCell.swift in Sources */,
+				04423AF12891820000C0E559 /* GroupUser.swift in Sources */,
 				047DE6A8287E3907002D068A /* LoginService.swift in Sources */,
 				047DE68A287CB634002D068A /* UserService.swift in Sources */,
 				047DE685287B73B1002D068A /* GroupDetailTableViewCell.swift in Sources */,
@@ -709,13 +719,15 @@
 				0469EE502879FDCF00D498D6 /* Post.swift in Sources */,
 				04A61CA22882F2C500DA6775 /* CreatePostPictureService.swift in Sources */,
 				047DE67F287B6086002D068A /* GroupDetailViewController.swift in Sources */,
-				0469EE94287B081500D498D6 /* GroupsCollectionViewCell.swift in Sources */,
 				04A61C75287F932500DA6775 /* CreatePostViewController.swift in Sources */,
 				047DE6AD287F623B002D068A /* LoginViewController.swift in Sources */,
+				04423AF32891F27500C0E559 /* Avatar.swift in Sources */,
 				0469EE7A287AF32D00D498D6 /* ProfileUserViewController.swift in Sources */,
 				04A61C7F287FA77A00DA6775 /* CreatePostTextWebService.swift in Sources */,
 				047DE695287CD0B9002D068A /* FollowService.swift in Sources */,
+				04A61CBE2885E70000DA6775 /* PostCode.swift in Sources */,
 				04A61C70287F79BB00DA6775 /* RegisterViewController.swift in Sources */,
+				04423AED2891712300C0E559 /* CreateGroupViewController.swift in Sources */,
 				0469EE77287AC9DD00D498D6 /* RemarkPost.swift in Sources */,
 				04A61CB728837E6800DA6775 /* LikeService.swift in Sources */,
 				04A61CAB2882F71900DA6775 /* RemarksService.swift in Sources */,
@@ -729,6 +741,7 @@
 				0469EE98287B181B00D498D6 /* GroupsViewController.swift in Sources */,
 				0469EE352879FAAD00D498D6 /* SceneDelegate.swift in Sources */,
 				0469EE82287AFF3F00D498D6 /* RemarksViewController.swift in Sources */,
+				04A61CC02885E70D00DA6775 /* PostPicture.swift in Sources */,
 				047DE697287CD0C4002D068A /* Follow.swift in Sources */,
 				0469EE8C287B065500D498D6 /* GroupWebService.swift in Sources */,
 				04A61C942882210500DA6775 /* RegisterWebService.swift in Sources */,

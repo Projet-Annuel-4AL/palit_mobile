@@ -16,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var remarksCount: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var datePost: UILabel!
     
     var likeService: LikeService = LikeWebService()
     var isliked: Bool!
@@ -30,13 +31,12 @@ class PostTableViewCell: UITableViewCell {
     
      override func awakeFromNib() {
         super.awakeFromNib()
-    
+         
      }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
         
     func configure(with model: Post, isLiked: Bool){
@@ -46,11 +46,17 @@ class PostTableViewCell: UITableViewCell {
         self.setUserImage()
         self.setUserName()
         self.setTitlePost()
-        self.setPostText()
         self.setLikesCount()
         self.setRemarksCount()
         self.setLikesCount()
         self.setLikeButton()
+        self.setdatePost()
+        
+        if model.text.content.isEmpty {
+            self.setPostCode()
+        } else {
+            self.setPostText()
+        }
     }
     
     @IBAction func goToProfile(){
@@ -102,6 +108,13 @@ class PostTableViewCell: UITableViewCell {
         self.postText.text = htmlString
     }
     
+    func setPostCode(){
+        let htmlString = self.model.code.content
+        
+        self.postText.numberOfLines = 0
+        self.postText.text = htmlString
+    }
+    
     func setLikesCount(){
         let likeCount = self.model.likes.count
         
@@ -126,6 +139,19 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
+    func setdatePost(){
+        let date = self.model.createdDate.prefix(10)
+        
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        let showDate = inputFormatter.date(from: String(date))
+        inputFormatter.dateFormat = "dd/MM/yyyy"
+        let resultString = inputFormatter.string(from: showDate!)
+        
+        
+        self.datePost.text = resultString
+    }
+    
     func getIdLike(likes: [Like]) -> Int {
         let idCurentUser = UserDefaults.standard.string(forKey: "id")
         
@@ -139,6 +165,41 @@ class PostTableViewCell: UITableViewCell {
             }
         }
         return 0
+    }
+    
+    private func setImageUser(userImageString: String) -> UIImage{
+        let url = URL(string: userImageString)
+        let data = try? Data(contentsOf: url!)
+        
+        let userImage: UIImage
+        
+        if let imageData = data {
+            userImage = UIImage(data: imageData)!
+        } else {
+            let userName = "not_found"
+            guard let image = UIImage(named: userName) else {
+                return UIImage(named: "interrogation")!
+            }
+            userImage = image
+        }
+        
+        return userImage
+    }
+    
+    func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
+
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "dd/MM/yyyy"
+
+        if let date = inputFormatter.date(from: dateString) {
+
+            let outputFormatter = DateFormatter()
+          outputFormatter.dateFormat = format
+
+            return outputFormatter.string(from: date)
+        }
+
+        return nil
     }
     
 }

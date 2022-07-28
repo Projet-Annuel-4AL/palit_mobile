@@ -74,8 +74,6 @@ class RemarkWebService: RemarkService {
             do{
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 
-                print(response)
-                
             } catch {
                 print(error)
             }

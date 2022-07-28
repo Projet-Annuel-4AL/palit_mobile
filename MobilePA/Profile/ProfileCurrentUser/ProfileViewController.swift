@@ -92,10 +92,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             return
         }
         
-        
-        
         self.userName.text = username
         self.idUser = Int(idUser)
+    }
+    
+    private func setImageUser(userImageString: String) -> UIImage{
+        let url = URL(string: userImageString)
+        let data = try? Data(contentsOf: url!)
+        
+        let userImage: UIImage
+        
+        if let imageData = data {
+            userImage = UIImage(data: imageData)!
+        } else {
+            let userName = "not_found"
+            guard let image = UIImage(named: userName) else {
+                return UIImage(named: "interrogation")!
+            }
+            userImage = image
+        }
+        
+        return userImage
     }
     
     

@@ -21,7 +21,7 @@ class PostWebService: PostService {
                 completion([])
                 return
             }
-            
+    
             let posts  = json.compactMap{ post in
                 Post(dict: post)
             }

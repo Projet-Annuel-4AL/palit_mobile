@@ -131,6 +131,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="countLikes" destination="g54-a4-jR8" id="Uxd-HU-kwl"/>
+                <outlet property="countRemarks" destination="l71-f5-vqs" id="6SJ-M8-IRO"/>
                 <outlet property="postText" destination="0Ak-Dv-Nou" id="2JA-8a-evC"/>
                 <outlet property="postTitle" destination="BKg-VC-Y1R" id="cXE-KG-mVD"/>
                 <outlet property="userName" destination="t29-ha-aTu" id="Ggk-bo-BKO"/>

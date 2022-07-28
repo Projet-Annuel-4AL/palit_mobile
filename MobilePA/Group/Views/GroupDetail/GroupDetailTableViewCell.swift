@@ -17,9 +17,12 @@ class GroupDetailTableViewCell: UITableViewCell {
     
     var models: GroupPost!
     
+    
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var countRemarks: UILabel!
+    @IBOutlet weak var countLikes: UILabel!
     
     public func configure(with models: GroupPost){
         self.models = models
@@ -27,6 +30,8 @@ class GroupDetailTableViewCell: UITableViewCell {
         self.setUserName()
         self.setPostText()
         self.setPostTitle()
+        self.setCountLikes()
+        self.setCountRemarks()
     }
     
     override func awakeFromNib() {
@@ -40,16 +45,24 @@ class GroupDetailTableViewCell: UITableViewCell {
     }
     
     private func setUserName(){
-        self.userName.text = "luffy"
+        self.userName.text = models.post.user.firstName
     }
     
     private func setPostText(){
         self.postText.numberOfLines = 0
-        self.postText.text = "un post"
+        self.postText.text = models.post.text.content
     }
     
     private func setPostTitle(){
         self.postTitle.text = self.models.post.title
+    }
+    
+    private func setCountLikes(){
+        self.countLikes.text = String(self.models.post.likes.count)
+    }
+    
+    private func setCountRemarks(){
+        self.countRemarks.text = String(self.models.post.remarks.count)
     }
     
 }

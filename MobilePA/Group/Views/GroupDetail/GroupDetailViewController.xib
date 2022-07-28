@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupDetailViewController" customModule="MobilePA" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionButton" destination="ZAK-r2-epE" id="z4W-Dy-V8f"/>
+                <outlet property="groupJoinButton" destination="RVR-Kf-OCD" id="OFV-b0-ALS"/>
                 <outlet property="groupTableview" destination="Vp6-j4-dwc" id="gO8-0j-MdL"/>
                 <outlet property="groupTitle" destination="MTw-Uy-sQL" id="Ngy-2J-eWy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -51,6 +53,9 @@
                                     <rect key="frame" x="311.5" y="25" width="77.5" height="28.5"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" subtitle="Rejoindre"/>
+                                    <connections>
+                                        <action selector="handleJoinGroup" destination="-1" eventType="touchUpInside" id="h3u-8R-5Vn"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-r2-epE">
                                     <rect key="frame" x="154" y="23.5" width="45" height="31"/>
@@ -102,7 +107,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vp6-j4-dwc" secondAttribute="trailing" id="bBx-NJ-298"/>
                 <constraint firstItem="chp-oj-nTt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nvF-S8-td3"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+            <point key="canvasLocation" x="154" y="58"/>
         </view>
     </objects>
     <resources>

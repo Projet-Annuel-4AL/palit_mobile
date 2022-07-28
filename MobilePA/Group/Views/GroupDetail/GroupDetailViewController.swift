@@ -11,10 +11,12 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var groupTableview: UITableView!
     @IBOutlet weak var groupTitle: UILabel!
-    //@IBOutlet weak var descriptionButton: UIButton!
+    @IBOutlet weak var descriptionButton: UIButton!
+    @IBOutlet weak var groupJoinButton: UIButton!
     
     var groupService: GroupService = GroupWebService()
     let cellSpacingHeight: CGFloat = 5
+    var isJoined: Bool!
     var group: Group!
     var posts: [GroupPost] = [] {
         didSet {
@@ -25,10 +27,9 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.groupTableview.delegate = self
-        self.groupTableview.dataSource = self
-        
+        self.setGroupJoinButton()
         self.setGroupDetail()
+        
         
         self.groupTableview.register(GroupDetailTableViewCell.nib(), forCellReuseIdentifier: GroupDetailTableViewCell.identifier)
         
@@ -40,13 +41,14 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
             self.posts = posts
         }, idGroup: groupDetail.idGroup)
         
+        self.groupTableview.delegate = self
+        self.groupTableview.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = groupTableview.dequeueReusableCell(withIdentifier: GroupDetailTableViewCell.identifier, for: indexPath) as! GroupDetailTableViewCell
         
         cell.configure(with: posts[indexPath.row])
-        print(posts[indexPath.row])
         
         return cell
     }
@@ -72,16 +74,28 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.groupTitle.numberOfLines = 0
         self.groupTitle.font = UIFont(name:"HelveticaNeue-Bold", size: 19.0)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setGroupJoinButton(){
+        if self.isJoined {
+            var config = UIButton.Configuration.tinted()
+            config.subtitle = "Rejoint"
+            self.groupJoinButton.configuration = config
+        } else {
+            var config = UIButton.Configuration.tinted()
+            config.subtitle = "Rejoindre"
+            self.groupJoinButton.configuration = config
+        }
     }
-    */
-
+    
+    @IBAction func handleJoinGroup(){
+        if  !self.isJoined {
+            self.setGroupJoinButton()
+            self.isJoined = true
+            self.groupService.joinGroup(idGroup: group.idGroup)
+        } else {
+            self.setGroupJoinButton()
+            self.isJoined = false
+            self.groupService.quitGroup(idGroup: group.idUser)
+        }
+    }
 }
