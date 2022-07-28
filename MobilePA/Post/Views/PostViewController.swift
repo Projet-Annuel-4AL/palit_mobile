@@ -10,7 +10,6 @@ import UIKit
 class PostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewPost: UITableView!
-    private let refreshControl = UIRefreshControl()
       
     var postService: PostService = PostWebService()
     let cellSpacingHeight: CGFloat = 5
@@ -19,6 +18,12 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.tableViewPost.reloadData() // recharge la tableview
         }
     }
+    
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,20 @@ class PostViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableViewPost.delegate = self
         self.tableViewPost.dataSource = self
+        
+        self.tableViewPost.refreshControl = myRefreshControl
+    }
+    
+    @objc private func refresh(sender: UIRefreshControl){
+        posts.removeAll()
+        
+        self.postService.getPosts{ posts in
+            self.posts = posts
+        }
+        
+        
+        self.tableViewPost.reloadData()
+        sender.endRefreshing()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

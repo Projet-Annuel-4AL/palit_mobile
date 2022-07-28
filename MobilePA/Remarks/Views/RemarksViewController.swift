@@ -24,6 +24,12 @@ class RemarksViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +43,19 @@ class RemarksViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.tableViewRemark.delegate = self
         self.tableViewRemark.dataSource = self
+        
+        self.tableViewRemark.refreshControl = myRefreshControl
+    }
+    
+    @objc private func refresh(sender: UIRefreshControl){
+        remarks.removeAll()
+        
+        self.remarkService.getRemarksByPost(completion: { remarks in
+            self.remarks = remarks
+        }, idPost: self.idPost)
+        
+        self.tableViewRemark.reloadData()
+        sender.endRefreshing()
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

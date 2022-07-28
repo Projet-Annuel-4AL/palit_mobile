@@ -17,6 +17,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var remarksCount: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var datePost: UILabel!
+    @IBOutlet weak var groupeLabel: UILabel!
     
     var likeService: LikeService = LikeWebService()
     var isliked: Bool!

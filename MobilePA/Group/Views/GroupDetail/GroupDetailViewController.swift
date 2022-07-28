@@ -24,6 +24,12 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +49,23 @@ class GroupDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.groupTableview.delegate = self
         self.groupTableview.dataSource = self
+        
+        self.groupTableview.refreshControl = myRefreshControl
+    }
+    
+    @objc private func refresh(sender: UIRefreshControl){
+        posts.removeAll()
+        
+        guard let groupDetail = self.group else {
+            return
+        }
+        
+        self.groupService.getPostsByIdGroup(completion: { posts in
+            self.posts = posts
+        }, idGroup: groupDetail.idGroup)
+        
+        self.groupTableview.reloadData()
+        sender.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

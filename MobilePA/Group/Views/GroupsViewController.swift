@@ -20,6 +20,12 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,7 +49,30 @@ class GroupsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableViewGroup.delegate = self
         self.tableViewGroup.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        self.tableViewGroup.refreshControl = myRefreshControl
+    }
+    
+    @objc private func refresh(sender: UIRefreshControl){
+        groups.removeAll()
+        groupsByUser.removeAll()
+        
+        self.groupService.getGroups { groups in
+            self.groups = groups
+        }
+        
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let idUser = idCurentUser else {
+            return
+        }
+        
+        self.groupService.getGroupsByUserId(completion: { groups in
+            self.groupsByUser = groups
+        }, idUser: idUser)
+        
+        self.tableViewGroup.reloadData()
+        sender.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell

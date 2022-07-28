@@ -37,9 +37,22 @@ class GroupsTableViewCell: UITableViewCell {
     func configure(with model: Group){
         self.model = model
         
+        self.setColorView()
         self.setGroupTitle()
         self.setGroupDescription()
         self.setGroupTheme()
+    }
+    
+    private func setColorView(){
+        let idCurentUser = UserDefaults.standard.string(forKey: "id")
+        
+        guard let idUser = idCurentUser else {
+            return
+        }
+        
+        if model.idUser == Int(idUser) {
+            self.groupCellView.backgroundColor = UIColor.systemMint
+        }
     }
     
     func setGroupTitle(){

@@ -21,6 +21,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.currentUserPostsTableView.reloadData()
         }
     }
+    
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +49,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.postsByUser = posts
         }, idUser: idCurrentUser)
         
+        self.currentUserPostsTableView.refreshControl = myRefreshControl
+    }
+    
+    @objc private func refresh(sender: UIRefreshControl){
+        postsByUser.removeAll()
+        
+        guard let idCurrentUser = self.idUser else {
+            return
+        }
+        
+        self.postService.getPostsByIdUser(completion: { posts in
+            self.postsByUser = posts
+        }, idUser: idCurrentUser)
+        
+        self.currentUserPostsTableView.reloadData()
+        sender.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
